@@ -8,6 +8,7 @@ art = """
 .##.....##.##....##.##.....##.##.....##.##....##..##..##....##   \__/            \__/
 .##.....##..######..##.....##..#######...######..####..######. 
       """
+message = 'Huge Symbolic Data (HSMusic) -- version 0.0\n'
 
 import midi
 import numpy as np
@@ -85,8 +86,8 @@ def to_matrix(midifile):
         time += 1
     return np.asarray(statematrix)
 
-def to_midi(statematrix, name="example"):
-    """ Write a binary matrix as a MIDI file under the filename name+'.mid'.
+def to_midi(statematrix, name="example", path=''):
+    """ Write a binary matrix as a MIDI file under the filename
     """
     statematrix = np.asarray(statematrix)
     pattern = midi.Pattern()
@@ -119,16 +120,31 @@ def to_midi(statematrix, name="example"):
         prevstate = state
     eot = midi.EndOfTrackEvent(tick=1)
     track.append(eot)
-    midi.write_midifile(os.path.join(OUTPUT_DIR, '{}.mid'.format(name)), pattern)
+    name = str_to_tag(name)
+    midi.write_midifile(os.path.join(path, '{}.mid'.format(name)), pattern)
     
 def create_dataset(midifolder):
-    """ Create a .npy file with tensors from MIDI folder
+    """ Read midi files ...
+        If save, create a .npy file with tensors from MIDI folder
     """
-    print('TODO')
+    data = []
+    files = os.listdir(midifolder)
+    files = [x for x in files if ('.mid' in x) or ('.midi' in x)]
+    for f in files:
+        path = os.path.join(midifolder, f)
+        try:
+            data.append(to_matrix(path))
+        except:
+            print('{} failed. TODO: move to bad_files folder.'.format(f))
+    return np.array(data)
     
 if __name__ == "__main__":
-    print('Huge Symbolic Data (HSMusic) version 0.0')
     print(art)
+    print(message)
     midiname = os.path.join(DATA_DIR, 'test.mid')
     print(str_to_tag('Str to tag TEST /!/'))
     print(to_tags(midiname))
+    # to_midifile(matrix, 'example', path=OUTPUT_DIR)
+    data = create_dataset(DATA_DIR)
+    for e in data:
+        print(e.shape)

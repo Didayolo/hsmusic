@@ -1,6 +1,4 @@
-# Genesik
-
-### Huge Symbolic Music Dataset (HSMusic)
+# Huge Symbolic Music Dataset (HSMusic)
 * Data: MIDI files in binary matrix representation
 * Each data has tags: style, composer, instruments and more to steer generation or do supervised learning
 
