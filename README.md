@@ -1,8 +1,8 @@
 # Genesik
 
-### Huge symbolic music using dataset
-* Data: MIDI files
-* Labels: Metadata (style, compositor, instruments, etc.) to steer generation or do supervised learning
+### Huge Symbolic Music Dataset (HSMusic)
+* Data: MIDI files in binary matrix representation
+* Each data has tags: style, composer, instruments and more to steer generation or do supervised learning
 
 ##### Library
 * to_matrix

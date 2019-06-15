@@ -1,7 +1,16 @@
 # Huge Symbolic Music Dataset (HSMusic)
+art = """
+.##.....##..######..##.....##.##.....##..######..####..######.
+.##.....##.##....##.###...###.##.....##.##....##..##..##....##       |~~~~~~~~~~~~~~~|
+.##.....##.##.......####.####.##.....##.##........##..##......       |~~~~~~~~~~~~~~~|
+.#########..######..##.###.##.##.....##..######...##..##......       |               |
+.##.....##.......##.##.....##.##.....##.......##..##..##......   /~~\|           /~~\| 
+.##.....##.##....##.##.....##.##.....##.##....##..##..##....##   \__/            \__/
+.##.....##..######..##.....##..#######...######..####..######. 
+      """
 
 import midi
-import numpy
+import numpy as np
 import os
 import unicodedata
 import re
@@ -74,12 +83,12 @@ def to_matrix(midifile):
         if all(t is None for t in timeleft):
             break
         time += 1
-    return statematrix
+    return np.asarray(statematrix)
 
 def to_midi(statematrix, name="example"):
     """ Write a binary matrix as a MIDI file under the filename name+'.mid'.
     """
-    statematrix = numpy.asarray(statematrix)
+    statematrix = np.asarray(statematrix)
     pattern = midi.Pattern()
     track = midi.Track()
     pattern.append(track)
@@ -112,9 +121,14 @@ def to_midi(statematrix, name="example"):
     track.append(eot)
     midi.write_midifile(os.path.join(OUTPUT_DIR, '{}.mid'.format(name)), pattern)
     
+def create_dataset(midifolder):
+    """ Create a .npy file with tensors from MIDI folder
+    """
+    print('TODO')
+    
 if __name__ == "__main__":
     print('Huge Symbolic Data (HSMusic) version 0.0')
-    # TODO: Cool ASCII art
+    print(art)
     midiname = os.path.join(DATA_DIR, 'test.mid')
     print(str_to_tag('Str to tag TEST /!/'))
     print(to_tags(midiname))
