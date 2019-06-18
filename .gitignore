@@ -2,3 +2,8 @@
 __pycache__
 lib/
 old/
+download/
+data/
+archive/
+*labels.csv
+output/

@@ -12,16 +12,19 @@ message = 'Huge Symbolic Data (HSMusic) -- version 0.0\n'
 
 import midi
 import numpy as np
+import pandas as pd
 import os
 import unicodedata
 import re
+from shutil import copyfile
 
 lowerBound = 24
 upperBound = 102
 DATA_DIR = 'data'
 OUTPUT_DIR = 'output'
+LABELS_FILENAME = 'labels.csv'
 
-def str_to_tag(string):
+def standardize(string):
     """ Convert a character string into another one in a standard format for naming.
         Converts to lowercase, removes non-alpha characters, and converts spaces to hyphens.
         Example: 'La Marseillaise' -> 'la_marseillaise'.
@@ -32,11 +35,15 @@ def str_to_tag(string):
     string = re.sub('[-\s]+', '_', string)
     return string
     
-def to_tags(midifile):
-    """ Read metadata from a MIDI file and return a list of tags.
+def to_labels(midifile):
+    """ Read metadata from a MIDI file and return a list of labels.
+        NOT IMPLEMENTED!
     """
-    pattern = midi.read_midifile(midifile)
-    print(pattern[0])
+    #pattern = midi.read_midifile(midifile)
+    #metadata = pattern[0]
+    filename = standardize(os.path.basename(midifile))
+    labels = filename.split('_')
+    return list(set(labels))
 
 def to_matrix(midifile):
     """ Read a MIDI file and convert it into a binary matrix.
@@ -120,31 +127,84 @@ def to_midi(statematrix, name="example", path=''):
         prevstate = state
     eot = midi.EndOfTrackEvent(tick=1)
     track.append(eot)
-    name = str_to_tag(name)
+    name = standardize(name)
     midi.write_midifile(os.path.join(path, '{}.mid'.format(name)), pattern)
     
-def create_dataset(midifolder):
-    """ Read midi files ...
+def get_labels():
+    """ Read label file and return the labels distribution.
+    """
+    df = pd.read_csv(LABELS_FILENAME, header=0, index_col=None)
+    labels = df['Labels']
+    dist = dict()
+    for line in labels:
+        for label in line.split(';'):
+            if label in dist:
+                dist[label] += 1
+            else:
+                dist[label] = 1
+    return dist
+    
+def get_data(labels=None):
+    """ Get data associated to specific labels.
+        Default behaviour: get the whole dataset.
+        Read midi files ...
         If save, create a .npy file with tensors from MIDI folder
     """
     data = []
-    files = os.listdir(midifolder)
-    files = [x for x in files if ('.mid' in x) or ('.midi' in x)]
+    files = os.listdir(DATA_DIR)
+    files = [x for x in files if '.mid' in x]
     for f in files:
-        path = os.path.join(midifolder, f)
+        path = os.path.join(DATA_DIR, f)
         try:
             data.append(to_matrix(path))
         except:
-            print('{} failed. TODO: move to bad_files folder.'.format(f))
+            print('Failed to read {}.'.format(f))
     return np.array(data)
-    
+
+def create_dataset(input_dir, sublabels=None):
+    """ Open folder
+        Read labels from directory names and filenames
+        Copy data to DATA_DIR
+        Write labels in labels.csv file
+    """
+    dirname = os.path.basename(input_dir)
+    print(dirname)
+    files = os.listdir(input_dir)
+    folders = [x for x in files if os.path.isdir(os.path.join(input_dir, x))]
+    print(files)
+    midifiles = [x for x in files if '.mid' in x]
+    labels = to_labels(dirname) # labels of current folder
+    if sublabels is not None:
+        labels = labels + sublabels # add labels of previous folders
+    for folder in folders:
+        create_dataset(os.path.join(input_dir, folder), sublabels=labels)
+    for midifile in midifiles:
+        filename = os.path.basename(midifile)
+        print(filename)
+        f_labels = labels + to_labels(filename) # add labels contained in filename
+        f_labels = set(f_labels) # unique labels
+        labels_file = open(os.path.join(LABELS_FILENAME), 'a') # in root dir
+        if os.path.isfile(LABELS_FILENAME):
+            labels.file.write('FileName,Labels\n') # no sure if we can do that
+        labels_file.write('{},{}\n'.format(filename, ';'.join(f_labels)))
+        labels_file.close()
+        copyfile(os.path.join(input_dir, midifile), os.path.join(DATA_DIR, filename))
+
+def replace_labels():
+    """ 'chpn -> chopin
+    """
+    pass
+
 if __name__ == "__main__":
     print(art)
     print(message)
+    print(standardize('Str to label -- TEST /!/'))
     midiname = os.path.join(DATA_DIR, 'test.mid')
-    print(str_to_tag('Str to tag TEST /!/'))
-    print(to_tags(midiname))
+    print(to_labels(midiname))
+    print(get_labels())
     # to_midifile(matrix, 'example', path=OUTPUT_DIR)
-    data = create_dataset(DATA_DIR)
-    for e in data:
-        print(e.shape)
+    #data = get_data()
+    #for e in data:
+    #    print(e.shape)
+    #create_dataset('download/test')
+    
