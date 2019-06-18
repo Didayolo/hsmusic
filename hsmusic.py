@@ -22,7 +22,8 @@ lowerBound = 24
 upperBound = 102
 DATA_DIR = 'data'
 OUTPUT_DIR = 'output'
-LABELS_FILENAME = 'labels/labels.csv'
+LABELS_DIR = 'labels'
+LABELS_FILENAME = os.path.join(LABELS_DIR, 'labels.csv')
 
 def standardize(string):
     """ Convert a character string into another one in a standard format for naming.
@@ -37,7 +38,9 @@ def standardize(string):
     
 def to_labels(midifile):
     """ Read metadata from a MIDI file and return a list of labels.
-        NOT IMPLEMENTED!
+        From filename
+        Number of voices
+        Time signature, etc.
     """
     #pattern = midi.read_midifile(midifile)
     #metadata = pattern[0]
@@ -197,15 +200,17 @@ def create_dataset(input_dir, sublabels=None):
         copyfile(os.path.join(input_dir, midifile), os.path.join(DATA_DIR, filename))
     labels_file.close()
 
-def replace_labels():
+def clean_labels():
     """ 'chpn -> chopin
+        'midi' -> ''
+        'bach' -> 'bach,baroque'
     """
     pass
 
 if __name__ == "__main__":
     print(art)
     print(message)
-    #create_dataset('download/test')
+    create_dataset('download/umaes')
     print(get_labels())
     #to_midifile(matrix, 'example', path=OUTPUT_DIR)
     #data = get_data()
