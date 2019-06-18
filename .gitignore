@@ -1,9 +1,10 @@
 *.ipynb_checkpoints
 __pycache__
+data/
+labels/
+archive/
 lib/
 old/
 download/
-data/
-archive/
-*labels.csv
 output/
+*example*

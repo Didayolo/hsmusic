@@ -22,7 +22,7 @@ lowerBound = 24
 upperBound = 102
 DATA_DIR = 'data'
 OUTPUT_DIR = 'output'
-LABELS_FILENAME = 'labels.csv'
+LABELS_FILENAME = 'labels/labels.csv'
 
 def standardize(string):
     """ Convert a character string into another one in a standard format for naming.
@@ -42,6 +42,8 @@ def to_labels(midifile):
     #pattern = midi.read_midifile(midifile)
     #metadata = pattern[0]
     filename = standardize(os.path.basename(midifile))
+    filename = filename.replace('mid', '')
+    filename = filename.replace('midi', '')
     labels = filename.split('_')
     return list(set(labels))
 
@@ -165,8 +167,16 @@ def create_dataset(input_dir, sublabels=None):
     """ Open folder
         Read labels from directory names and filenames
         Copy data to DATA_DIR
-        Write labels in labels.csv file
+        Write labels in labels file
     """
+    # create labels file
+    if not os.path.isfile(LABELS_FILENAME):
+        labels_file = open(os.path.join(LABELS_FILENAME), 'w') # in root dir
+        labels_file.write('FileName,Labels\n')
+        labels_file.close()
+    labels_file = open(os.path.join(LABELS_FILENAME), 'a')
+    if not os.path.exists(DATA_DIR):
+        os.makedirs(DATA_DIR) # create data dir
     dirname = os.path.basename(input_dir)
     print(dirname)
     files = os.listdir(input_dir)
@@ -182,13 +192,10 @@ def create_dataset(input_dir, sublabels=None):
         filename = os.path.basename(midifile)
         print(filename)
         f_labels = labels + to_labels(filename) # add labels contained in filename
-        f_labels = set(f_labels) # unique labels
-        labels_file = open(os.path.join(LABELS_FILENAME), 'a') # in root dir
-        if os.path.isfile(LABELS_FILENAME):
-            labels.file.write('FileName,Labels\n') # no sure if we can do that
+        f_labels = set(f_labels) # unique labels       
         labels_file.write('{},{}\n'.format(filename, ';'.join(f_labels)))
-        labels_file.close()
         copyfile(os.path.join(input_dir, midifile), os.path.join(DATA_DIR, filename))
+    labels_file.close()
 
 def replace_labels():
     """ 'chpn -> chopin
@@ -198,13 +205,11 @@ def replace_labels():
 if __name__ == "__main__":
     print(art)
     print(message)
-    print(standardize('Str to label -- TEST /!/'))
-    midiname = os.path.join(DATA_DIR, 'test.mid')
-    print(to_labels(midiname))
+    #create_dataset('download/test')
     print(get_labels())
-    # to_midifile(matrix, 'example', path=OUTPUT_DIR)
+    #to_midifile(matrix, 'example', path=OUTPUT_DIR)
     #data = get_data()
     #for e in data:
     #    print(e.shape)
-    #create_dataset('download/test')
+    
     
