@@ -1,6 +1,9 @@
 # Huge Symbolic Music Dataset (HSMusic)
+
+![logo](logo_hsmusic.png)
+
 * Data: MIDI files in binary matrix representation
-* Each data has tags: style, composer, instruments and more to steer generation or do supervised learning
+* Each data point has *many labels*: style, composer, instruments and more to steer generation or do supervised learning
 
 ##### Library
 * to_matrix
