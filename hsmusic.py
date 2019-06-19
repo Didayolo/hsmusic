@@ -24,6 +24,9 @@ DATA_DIR = 'data'
 OUTPUT_DIR = 'output'
 LABELS_DIR = 'labels'
 LABELS_FILENAME = os.path.join(LABELS_DIR, 'labels.csv')
+NOT_LABELS_FILENAME = os.path.join(LABELS_DIR, 'not_labels.csv')
+REPLACE_LABELS_FILENAME = os.path.join(LABELS_DIR, 'replace_labels.csv')
+ADD_LABELS_FILENAME = os.path.join(LABELS_DIR, 'add_labels.csv')
 
 def standardize(string):
     """ Convert a character string into another one in a standard format for naming.
@@ -139,12 +142,28 @@ def to_midi(statematrix, name="example", path=''):
     midi.write_midifile(os.path.join(path, '{}.mid'.format(name)), pattern)
     
 def get_labels():
+    """ Read labels file and return a DataFrame. 
+        Labels of one example are separated with ';'.
+        :return: DataFrame ['FileName', 'Labels']
+        :rtype: pd.DataFrame
+    """
+    return pd.read_csv(LABELS_FILENAME, header=0, index_col=None)
+    
+def get_not_labels():
+    return pd.read_csv(NOT_LABELS_FILENAME, header=None, index_col=None)
+    
+def get_replace_labels():
+    pass
+    
+def get_add_labels():
+    pass
+    
+def get_labels_distribution():
     """ Read labels file and return the labels distribution.
         :return: Number of occurences for each label.
         :rtype: dict
     """
-    df = pd.read_csv(LABELS_FILENAME, header=0, index_col=None)
-    labels = df['Labels']
+    labels = get_labels()['Labels']
     dist = dict()
     for line in labels:
         for label in line.split(';'):
@@ -210,12 +229,24 @@ def create_dataset(input_dir, sublabels=None):
     labels_file.close()
 
 def clean_labels():
-    """ 'chpn -> chopin
-        'midi' -> ''
-        'bach' -> 'bach,baroque'
-        + delete unshared labels (only one occurence).
+    """ 1. Not labels:     'midi' -> ''
+        2. Replace labels: 'chpn -> chopin
+        3. Add labels:     'bach' -> 'bach,baroque'
+        4. Delete unshared labels (only one occurence).
     """
-    pass
+    # read labels file
+    labels = get_labels() 
+    not_labels = get_not_labels()
+    replace_labels = get_replace_labels()
+    add_labels = get_add_labels()
+    for index, row in labels.iterrows():
+        labels_list = row['Labels'].split(';')
+        labels_list = [x for x in labels_list if not not_labels.isin([x]).any().bool()] # 1. delete "note labels"
+        # TODO 2, 3, 4
+        labels_list = list(set(labels_list)) # delete doubles
+        row['Labels'] = ';'.join(labels_list)
+    #labels.to_csv(LABELS_FILENAME, index=False) # save labels file
+    labels.to_csv('test.csv', index=False) # TMP TODO
     
 def delete_duplicates():
     """ Delete MIDI file duplicates and merge their labels.
@@ -223,11 +254,13 @@ def delete_duplicates():
     pass    
 
 if __name__ == "__main__":
+    assert(standardize('test: ok!') == 'test_ok')
     print(art)
     print(message)
-    assert(standardize('test: ok!') == 'test_ok')
-    #create_dataset('raw_data/umaes')
-    #print(get_labels())
+    create_dataset('raw_data/umaes')
+    clean_labels()
+    print(get_labels_distribution())
+    
     #to_midifile(matrix, 'example', path=OUTPUT_DIR)
     #data = get_data()
     #for e in data:

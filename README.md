@@ -2,8 +2,8 @@
 
 ![logo](logo_hsmusic.png)
 
-* Data: MIDI files in binary matrix representation
-* Each data point has *many labels*: style, composer, instruments and more to steer generation or do supervised learning
+* Data: MIDI files.
+* Labels: Each data point has *many labels*: style, composer, instruments and more to steer generation or do supervised learning
 
 ##### Library
 * to_matrix
