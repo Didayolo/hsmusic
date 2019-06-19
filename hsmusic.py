@@ -206,6 +206,11 @@ def clean_labels():
         'bach' -> 'bach,baroque'
     """
     pass
+    
+def delete_duplicates():
+    """ Delete MIDI file duplicates and merge their labels
+    """
+    pass    
 
 if __name__ == "__main__":
     print(art)
