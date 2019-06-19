@@ -18,8 +18,8 @@ import unicodedata
 import re
 from shutil import copyfile
 
-lowerBound = 24
-upperBound = 102
+lower_bound = 24
+upper_bound = 102
 DATA_DIR = 'data'
 OUTPUT_DIR = 'output'
 LABELS_DIR = 'labels'
@@ -38,9 +38,8 @@ def standardize(string):
     
 def to_labels(midifile):
     """ Read metadata from a MIDI file and return a list of labels.
-        From filename
-        Number of voices
-        Time signature, etc.
+        From filename: bach_partita.mid -> 'bach', 'partita'
+        From MIDI: Number of voices, Time signature, etc.
     """
     #pattern = midi.read_midifile(midifile)
     #metadata = pattern[0]
@@ -52,12 +51,15 @@ def to_labels(midifile):
 
 def to_matrix(midifile):
     """ Read a MIDI file and convert it into a binary matrix.
+        :param midifile: MIDI filename string
+        :return: Binary matrix of shape (?, upper_bound - lower_bound, 2)
+        :rtype: np.ndarray
     """
     pattern = midi.read_midifile(midifile)
     timeleft = [track[0].tick for track in pattern]
     posns = [0 for track in pattern]
     statematrix = []
-    span = upperBound-lowerBound
+    span = upper_bound-lowerBound
     time = 0
     state = [[0,0] for x in range(span)]
     statematrix.append(state)
@@ -73,14 +75,14 @@ def to_matrix(midifile):
                 pos = posns[i]
                 evt = track[pos]
                 if isinstance(evt, midi.NoteEvent):
-                    if (evt.pitch < lowerBound) or (evt.pitch >= upperBound):
+                    if (evt.pitch < lower_bound) or (evt.pitch >= upper_bound):
                         pass
                         # print "Note {} at time {} out of bounds (ignoring)".format(evt.pitch, time)
                     else:
                         if isinstance(evt, midi.NoteOffEvent) or evt.velocity == 0:
-                            state[evt.pitch-lowerBound] = [0, 0]
+                            state[evt.pitch-lower_bound] = [0, 0]
                         else:
-                            state[evt.pitch-lowerBound] = [1, 1]
+                            state[evt.pitch-lower_bound] = [1, 1]
                 elif isinstance(evt, midi.TimeSignatureEvent):
                     if evt.numerator not in (2, 4):
                         # We don't want to worry about non-4 time signatures. Bail early!
@@ -99,13 +101,14 @@ def to_matrix(midifile):
     return np.asarray(statematrix)
 
 def to_midi(statematrix, name="example", path=''):
-    """ Write a binary matrix as a MIDI file under the filename
+    """ Write a binary matrix as a MIDI file under the specified name.
+        :param statematrix: Binary matrix of shape (?, upper_bound - lower_bound, 2)
     """
     statematrix = np.asarray(statematrix)
     pattern = midi.Pattern()
     track = midi.Track()
     pattern.append(track)
-    span = upperBound-lowerBound
+    span = upper_bound-lower_bound
     tickscale = 55
     lastcmdtime = 0
     prevstate = [[0,0] for x in range(span)]
@@ -124,10 +127,10 @@ def to_midi(statematrix, name="example", path=''):
             elif n[0] == 1:
                 onNotes.append(i)
         for note in offNotes:
-            track.append(midi.NoteOffEvent(tick=(time-lastcmdtime)*tickscale, pitch=note+lowerBound))
+            track.append(midi.NoteOffEvent(tick=(time-lastcmdtime)*tickscale, pitch=note+lower_bound))
             lastcmdtime = time
         for note in onNotes:
-            track.append(midi.NoteOnEvent(tick=(time-lastcmdtime)*tickscale, velocity=40, pitch=note+lowerBound))
+            track.append(midi.NoteOnEvent(tick=(time-lastcmdtime)*tickscale, velocity=40, pitch=note+lower_bound))
             lastcmdtime = time
         prevstate = state
     eot = midi.EndOfTrackEvent(tick=1)
@@ -136,7 +139,9 @@ def to_midi(statematrix, name="example", path=''):
     midi.write_midifile(os.path.join(path, '{}.mid'.format(name)), pattern)
     
 def get_labels():
-    """ Read label file and return the labels distribution.
+    """ Read labels file and return the labels distribution.
+        :return: Number of occurences for each label.
+        :rtype: dict
     """
     df = pd.read_csv(LABELS_FILENAME, header=0, index_col=None)
     labels = df['Labels']
@@ -149,11 +154,15 @@ def get_labels():
                 dist[label] = 1
     return dist
     
-def get_data(labels=None):
+def get_data(labels=None, proportions=None):
     """ Get data associated to specific labels.
         Default behaviour: get the whole dataset.
         Read midi files ...
         If save, create a .npy file with tensors from MIDI folder
+        :param labels: List of wanted labels. default: all.
+        :param proportions: List of values between 0 and 1 with the same length as labels. Proportions of examples to take from each label.
+        :return: Matrix of shape (n, ?, upper_bound - lower_bound, 2)
+        :rtype: np.ndarray
     """
     data = []
     files = os.listdir(DATA_DIR)
@@ -167,10 +176,10 @@ def get_data(labels=None):
     return np.array(data)
 
 def create_dataset(input_dir, sublabels=None):
-    """ Open folder
-        Read labels from directory names and filenames
-        Copy data to DATA_DIR
-        Write labels in labels file
+    """ Scan input_dir folder and execute create_dataset recursively.
+        Read labels from directory names, filenames and MIDI files.
+        Copy data to DATA_DIR.
+        Write labels in labels file.
     """
     # create labels file
     if not os.path.isfile(LABELS_FILENAME):
@@ -204,18 +213,19 @@ def clean_labels():
     """ 'chpn -> chopin
         'midi' -> ''
         'bach' -> 'bach,baroque'
+        + delete unshared labels (only one occurence).
     """
     pass
     
 def delete_duplicates():
-    """ Delete MIDI file duplicates and merge their labels
+    """ Delete MIDI file duplicates and merge their labels.
     """
     pass    
 
 if __name__ == "__main__":
     print(art)
     print(message)
-    create_dataset('download/umaes')
+    create_dataset('raw_data/umaes')
     print(get_labels())
     #to_midifile(matrix, 'example', path=OUTPUT_DIR)
     #data = get_data()

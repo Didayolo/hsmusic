@@ -5,6 +5,5 @@ labels/
 archive/
 lib/
 old/
-download/
+raw_data/
 output/
-*example*
