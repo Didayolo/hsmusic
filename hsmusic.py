@@ -33,7 +33,7 @@ def standardize(string):
     string = str(string)
     string = unicodedata.normalize('NFKD', string) #.encode('ascii', 'ignore').decode('ascii')
     string = re.sub('[^\w\s-]', '', string).strip().lower()
-    string = re.sub('[-\s]+', '_', string)
+    string = re.sub('[-\s:]+', '_', string)
     return string
     
 def to_labels(midifile):
@@ -225,8 +225,9 @@ def delete_duplicates():
 if __name__ == "__main__":
     print(art)
     print(message)
-    create_dataset('raw_data/umaes')
-    print(get_labels())
+    assert(standardize('test: ok!') == 'test_ok')
+    #create_dataset('raw_data/umaes')
+    #print(get_labels())
     #to_midifile(matrix, 'example', path=OUTPUT_DIR)
     #data = get_data()
     #for e in data:

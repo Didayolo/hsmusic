@@ -1,7 +1,6 @@
 *.ipynb_checkpoints
 __pycache__
 data/
-labels/
 archive/
 lib/
 old/
