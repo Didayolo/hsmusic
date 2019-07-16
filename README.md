@@ -2,20 +2,24 @@
 
 ![logo](logo_hsmusic.png)
 
-* Data: MIDI files.
-* Labels: Each data point has *many labels*: style, composer, instruments and more to steer generation or do supervised learning
+Name | HSMusic
+--- | ---
+Count | 110 000
+Data format | MIDI
+Tags | Style, composer, title and many more (multilabels)
+
+### Roadmap
+* Finish the data collection
+* Upload the database
+* Documentation and library
 
 ##### Library
-* to_matrix
-* to_midi
+* to_matrix : convert MIDI file into a binary matrix
+* to_midi : convert a binary matrix into a MIDI file
 * download_dataset
 * read_data
 * data_augmentation (transposition, rythm, etc.)
 * change_mode
-
-##### Representation
-* MIDI
-* Binary matrix
 
 ##### Sources
 * [freemidis.net](http://freemidis.net/)
