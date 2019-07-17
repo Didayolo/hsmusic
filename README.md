@@ -8,9 +8,9 @@ Data format | MIDI
 Tags | Style, composer, title and many more (multilabels)
 
 ### Roadmap
-* Finish the data collection
-* Upload the database
-* Documentation and library
+* Complete the data collection
+* Upload the database on a Cloud service
+* Add documentation and library
 
 ##### Library
 * to_matrix : convert MIDI file into a binary matrix
