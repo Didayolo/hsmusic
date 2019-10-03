@@ -4,9 +4,9 @@ art = """
 .##.....##.##....##.###...###.##.....##.##....##..##..##....##       |~~~~~~~~~~~~~~~|
 .##.....##.##.......####.####.##.....##.##........##..##......       |~~~~~~~~~~~~~~~|
 .#########..######..##.###.##.##.....##..######...##..##......       |               |
-.##.....##.......##.##.....##.##.....##.......##..##..##......   /~~\|           /~~\| 
+.##.....##.......##.##.....##.##.....##.......##..##..##......   /~~\|           /~~\|
 .##.....##.##....##.##.....##.##.....##.##....##..##..##....##   \__/            \__/
-.##.....##..######..##.....##..#######...######..####..######. 
+.##.....##..######..##.....##..#######...######..####..######.
       """
 message = 'Huge Symbolic Data (HSMusic) -- version 0.0\n'
 
@@ -38,7 +38,7 @@ def standardize(string):
     string = re.sub('[^\w\s-]', '', string).strip().lower()
     string = re.sub('[-\s:]+', '_', string)
     return string
-    
+
 def to_labels(midifile):
     """ Read metadata from a MIDI file and return a list of labels.
         From filename: bach_partita.mid -> 'bach', 'partita'
@@ -115,7 +115,7 @@ def to_midi(statematrix, name="example", path=''):
     tickscale = 55
     lastcmdtime = 0
     prevstate = [[0,0] for x in range(span)]
-    for time, state in enumerate(statematrix + [prevstate[:]]):  
+    for time, state in enumerate(statematrix + [prevstate[:]]):
         offNotes = []
         onNotes = []
         for i in range(span):
@@ -140,30 +140,43 @@ def to_midi(statematrix, name="example", path=''):
     track.append(eot)
     name = standardize(name)
     midi.write_midifile(os.path.join(path, '{}.mid'.format(name)), pattern)
-    
+
 def get_labels():
-    """ Read labels file and return a DataFrame. 
+    """ Read labels file and return a DataFrame.
         Labels of one example are separated with ';'.
         :return: DataFrame ['FileName', 'Labels']
         :rtype: pd.DataFrame
     """
     return pd.read_csv(LABELS_FILENAME, header=0, index_col=None)
-    
+
 def get_not_labels():
+    """ Return a list of tags to not consider as labels.
+        :rtype: pd.DataFrame
+    """
     return pd.read_csv(NOT_LABELS_FILENAME, header=None, index_col=None)
-    
+
 def get_replace_labels():
-    pass
-    
+    """ Mapping of replacements.
+        e.g. 'chpn' -> 'chopin'.
+        :return: DataFrame ['Current', 'New']
+        :rtype: pd.DataFrame
+    """
+    return pd.read_csv(REPLACE_LABELS_FILENAME, header=0, index_col=None)
+
 def get_add_labels():
-    pass
-    
-def get_labels_distribution():
+    """ Pairs of labels contained one in another.
+        e.g. if labels 'bach' is present, adds 'baroque'.
+        :return: DataFrame ['Current', 'New']
+        :rtype: pd.DataFrame
+    """
+    return pd.read_csv(ADD_LABELS_FILENAME, header=0, index_col=None)
+
+def get_labels_distribution(labels):
     """ Read labels file and return the labels distribution.
         :return: Number of occurences for each label.
         :rtype: dict
     """
-    labels = get_labels()['Labels']
+    labels = labels['Labels']
     dist = dict()
     for line in labels:
         for label in line.split(';'):
@@ -172,7 +185,7 @@ def get_labels_distribution():
             else:
                 dist[label] = 1
     return dist
-    
+
 def get_data(labels=None, proportions=None):
     """ Get data associated to specific labels.
         Default behaviour: get the whole dataset.
@@ -200,6 +213,7 @@ def create_dataset(input_dir, sublabels=None):
         Copy data to DATA_DIR.
         Write labels in labels file.
     """
+    print('initializing dataset...')
     # create labels file
     if not os.path.isfile(LABELS_FILENAME):
         labels_file = open(os.path.join(LABELS_FILENAME), 'w') # in root dir
@@ -220,12 +234,12 @@ def create_dataset(input_dir, sublabels=None):
     for folder in folders:
         create_dataset(os.path.join(input_dir, folder), sublabels=labels)
     for midifile in midifiles:
-        filename = os.path.basename(midifile)
+        filename = standardize(os.path.basename(midifile))[:-3] + '.mid'
         print(filename)
         f_labels = labels + to_labels(filename) # add labels contained in filename
-        f_labels = set(f_labels) # unique labels       
+        f_labels = set(f_labels) # unique labels
         labels_file.write('{},{}\n'.format(filename, ';'.join(f_labels)))
-        copyfile(os.path.join(input_dir, midifile), os.path.join(DATA_DIR, filename))
+        copyfile(os.path.join(input_dir, midifile), os.path.join(DATA_DIR, filename)) # copy midifile
     labels_file.close()
 
 def clean_labels():
@@ -234,36 +248,56 @@ def clean_labels():
         3. Add labels:     'bach' -> 'bach,baroque'
         4. Delete unshared labels (only one occurence).
     """
+    print('cleaning labels...')
     # read labels file
-    labels = get_labels() 
+    labels = get_labels()
     not_labels = get_not_labels()
     replace_labels = get_replace_labels()
     add_labels = get_add_labels()
     for index, row in labels.iterrows():
         labels_list = row['Labels'].split(';')
-        labels_list = [x for x in labels_list if not not_labels.isin([x]).any().bool()] # 1. delete "note labels"
-        # TODO 2, 3, 4
+        # 1. delete "not labels"
+        labels_list = [x for x in labels_list if not not_labels.isin([x]).any().bool()]
+        # 2. replace labels
+        for i, r in replace_labels.iterrows():
+            labels_list = [x.replace(r['Current'], r['New']) for x in labels_list]
+        # 3. add labels
+        to_add = []
+        for i, r in add_labels.iterrows():
+            if r['Current'] in labels_list:
+                to_add.append(r['New'])
+        labels_list = labels_list + to_add
         labels_list = list(set(labels_list)) # delete doubles
+        labels.at[index, 'Labels'] = ';'.join(labels_list) # update df
+        #row['Labels'] = ';'.join(labels_list)
+    # 4. delete label linked to only one example
+    dist = get_labels_distribution(labels)
+    only_once = [] # list of tags occuring only once
+    for key in dist.keys():
+        if dist[key] == 1:
+            only_once.append(key)
+    for index, row in labels.iterrows(): # another loop over labels
+        labels_list = row['Labels'].split(';')
+        labels_list = [x for x in labels_list if x not in only_once]
         row['Labels'] = ';'.join(labels_list)
     #labels.to_csv(LABELS_FILENAME, index=False) # save labels file
     labels.to_csv('test.csv', index=False) # TMP TODO
-    
+    # some lines disappear?
+
 def delete_duplicates():
     """ Delete MIDI file duplicates and merge their labels.
     """
-    pass    
+    # compare binary matrices?
+    pass
 
 if __name__ == "__main__":
-    assert(standardize('test: ok!') == 'test_ok')
     print(art)
     print(message)
-    create_dataset('raw_data/umaes')
-    clean_labels()
-    print(get_labels_distribution())
-    
+    #create_dataset('raw_data')
+    #clean_labels()
+    print(get_labels_distribution(get_labels()))
+
     #to_midifile(matrix, 'example', path=OUTPUT_DIR)
     #data = get_data()
     #for e in data:
     #    print(e.shape)
-    
-    
