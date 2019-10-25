@@ -232,7 +232,7 @@ def create_dataset(input_dir, sublabels=None):
     if sublabels is not None:
         labels = labels + sublabels # add labels of previous folders
     for folder in folders:
-        create_dataset(os.path.join(input_dir, folder), sublabels=labels)
+        create_dataset(os.path.join(input_dir, folder), sublabels=labels) # recursive call
     for midifile in midifiles:
         filename = standardize(os.path.basename(midifile))[:-3] + '.mid'
         print(filename)

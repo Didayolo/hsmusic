@@ -1,5 +1,8 @@
 # Huge Symbolic Music Dataset (HSMusic)
 
+* Effort to group most MIDI file as possible and automatically tag them.
+* Small library to feed ML models with MIDI files.
+
 ![logo](logo_hsmusic.png)
 
 Count | 130 943
@@ -7,18 +10,20 @@ Count | 130 943
 Data format | MIDI
 Tags | Style, composer, title and many more (multilabels)
 
+### How to contribute?
+
+If you want to add MIDI files to HSMusic Dataset, please contact me: (adrien.pavao@gmail.com)[]
+
 ### Roadmap
 * Complete the data collection
-* Upload the database on a Cloud service
-* Add documentation and library
+* Upload the database on a server
+* Add documentation and complete library
 
 ##### Library
-* to_matrix : convert MIDI file into a binary matrix
-* to_midi : convert a binary matrix into a MIDI file
-* download_dataset
-* read_data
-* data_augmentation (transposition, rythm, etc.)
-* change_mode
+* to_matrix: convert MIDI file into a binary matrix
+* to_midi: convert a binary matrix into a MIDI file
+* download_dataset: fetch data and labels from the server
+* TODO: read_data, data_augmentation (transposition, rythm, etc.), change_mode
 
 ##### Sources
 * [freemidis.net](http://freemidis.net/)
