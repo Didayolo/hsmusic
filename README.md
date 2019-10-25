@@ -12,7 +12,7 @@ Tags | Style, composer, title and many more (multilabels)
 
 ### How to contribute?
 
-If you want to add MIDI files to HSMusic Dataset, please contact me: (adrien.pavao@gmail.com)[]
+If you want to add MIDI files to HSMusic Dataset, please contact me: [adrien.pavao@gmail.com]()
 
 ### Roadmap
 * Complete the data collection
