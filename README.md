@@ -12,7 +12,7 @@ Tags | Style, composer, title and many more (multilabels)
 
 ### How to contribute?
 
-If you want to add MIDI files to HSMusic Dataset, please contact me: (adrien.pavao@gmail.com)[]
+If you want to add MIDI files to HSMusic Dataset, please contact me: [adrien.pavao@gmail.com]()
 
 ### Roadmap
 * Complete the data collection
@@ -20,13 +20,13 @@ If you want to add MIDI files to HSMusic Dataset, please contact me: (adrien.pav
 * Code library and ML baselines
 * Write documentation and example notebook
 
-##### Library
+### Library overview
 * to_matrix: convert MIDI file into a binary matrix
 * to_midi: convert a binary matrix into a MIDI file
 * download_dataset: fetch data and labels from the server
 * TODO: read_data, data_augmentation (transposition, rythm, etc.), change_mode
 
-##### Sources
+### Sources
 * [freemidis.net](http://freemidis.net/)
 * [reddit.com, 'largest midi collection on the internet'](https://www.reddit.com/r/WeAreTheMusicMakers/comments/3ajwe4/the_largest_midi_collection_on_the_internet/)
 * [uma.es](https://www.uma.es/victoria/)
