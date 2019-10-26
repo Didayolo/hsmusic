@@ -17,7 +17,8 @@ If you want to add MIDI files to HSMusic Dataset, please contact me: (adrien.pav
 ### Roadmap
 * Complete the data collection
 * Upload the database on a server
-* Add documentation and complete library
+* Code library and ML baselines
+* Write documentation and example notebook
 
 ##### Library
 * to_matrix: convert MIDI file into a binary matrix
