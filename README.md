@@ -1,7 +1,9 @@
 # Huge Symbolic Music Dataset (HSMusic)
 
-* Effort to group most MIDI file as possible and automatically tag them.
-* Small library to feed ML models with MIDI files.
+### HSMusic is a large and participative MIDI collection. More precisely, it is:
+
+* A joint effort to gather as much MIDI files as possible; and automatically tag them.
+* A small Python library to feed Machine Learning models with MIDI files.
 
 ![logo](logo_hsmusic.png)
 
@@ -12,18 +14,18 @@ Tags | Style, composer, title and many more (multilabels)
 
 ### How to contribute?
 
-If you want to add MIDI files to HSMusic Dataset, please contact me: [adrien.pavao@gmail.com]()
+If you want to add MIDI files to HSMusic Dataset, please contact me: [adrien.pavao@gmail.com](). You can also become a contributor of this repository or raise Github issues.
 
 ### Roadmap
 * Complete the data collection
-* Upload the database on a server
-* Code library and ML baselines
+* Clean the code for data management and labeling
+* Code ML baselines (discriminative and generative models)
 * Write documentation and example notebook
 
 ### Library overview
 * to_matrix: convert MIDI file into a binary matrix
 * to_midi: convert a binary matrix into a MIDI file
-* download_dataset: fetch data and labels from the server
+* Some models...
 * TODO: read_data, data_augmentation (transposition, rythm, etc.), change_mode
 
 ### Sources

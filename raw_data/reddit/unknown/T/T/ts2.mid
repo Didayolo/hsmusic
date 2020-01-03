@@ -1,0 +1,183 @@
+<html>
+
+<head>
+<title>Casey's Corner</title>
+<meta name="keywords" content="Toy Story,Pooh,tigger,Blues Clues, Apraxia,Country, free graphics,Jesus, God,Toddlers,banner exchange">
+
+<meta name="description" content="A page about a cute 3 year old, play games and win awards."><SCRIPT language="JavaScript"> <!--
+// No rightclick script v.2.5
+
+
+var message="Nope, you can't do that.\n\n Right clicking is not allowed in Casey's Corner.\n  This is a way to Protect Casey's pictures, and Casey.\n If you need a picture, or graphic for any reason, Feel free to email us."; // Message for the alert box
+
+// Don't edit below!
+
+function click(e) {
+if (document.all) {
+if (event.button == 2) {
+alert(message);
+return false;
+}
+}
+if (document.layers) {
+if (e.which == 3) {
+alert(message);
+return false;
+}
+}
+}
+if (document.layers) {
+document.captureEvents(Event.MOUSEDOWN);
+}
+document.onmousedown=click;
+// --> </SCRIPT>
+<style>
+<!--a:visited{color:#ff0000;}a:link{color:#339966;}a:hover{text-decoration:underline;color:#FFCC00;}a{text-decoration:none;color:#233362;}//-->
+</style><script>
+
+/*
+Cross browser cursor trailer script
+By Brian Caputo (bcaputo@icdc.com)
+Permission given to Dynamicdrive.com 
+to feature the script in it's DHTML archive
+For 100's more DHTML scripts and components,
+visit Dynamicdrive.com
+*/
+
+B=document.all;
+C=document.layers;
+T1=new Array("ts/cur1.gif",45,45,"cur2.gif",45,45,"cur3.gif",45,45,"cur4.gif",45,45,"cur5.gif",45,45,"cur6.gif",45,45)
+nos=parseInt(T1.length/3)
+rate=50
+ie5fix1=0;
+ie5fix2=0;
+for (i=0;i<nos;i++){
+createContainer("CUR"+i,i*10,i*10,i*3+1,i*3+2,"","<img src='"+T1[i*3]+"' width="+T1[(i*3+1)]+" height="+T1[(i*3+2)]+" border=0>")}
+function createContainer(N,Xp,Yp,W,H,At,HT,Op,St){
+with (document){
+write((!B) ? "<layer id='"+N+"' left="+Xp+" top="+Yp+" width="+W+" height="+H : "<div id='"+N+"'"+" style='position:absolute;left:"+Xp+"; top:"+Yp+"; width:"+W+"; height:"+H+"; ");
+if(St){
+if (C)
+write(" style='");
+write(St+";' ")
+}
+else write((B)?"'":"");
+write((At)? At+">" : ">");
+write((HT) ? HT : "");
+if (!Op)
+closeContainer(N)
+}
+}
+function closeContainer(){
+document.write((B)?"</div>":"</layer>")
+}
+function getXpos(N){
+return (B) ? parseInt(B[N].style.left) : C[N].left
+}
+function getYpos(N){
+return (B) ? parseInt(B[N].style.top) : C[N].top
+}
+
+function moveContainer(N,DX,DY){
+c=(B) ? B[N].style :C[N];c.left=DX;c.top=DY
+}
+function cycle(){
+//if (IE5) 
+if (document.all&&window.print){
+ie5fix1=document.body.scrollLeft;
+ie5fix2=document.body.scrollTop;
+}
+for (i=0;i<(nos-1);i++){
+moveContainer("CUR"+i,getXpos("CUR"+(i+1)),getYpos("CUR"+(i+1)))
+}
+}
+function newPos(e){
+moveContainer("CUR"+(nos-1),(B)?event.clientX+ie5fix1:e.pageX+2,(B)?event.clientY+ie5fix2:e.pageY+2
+)
+}
+if(document.layers)
+document.captureEvents(Event.MOUSEMOVE)
+document.onmousemove=newPos
+setInterval("cycle()",rate)
+</script>
+</head>
+<BODY BGCOLOR="#FFFFFF">
+<P><CENTER>
+<P><CENTER><IMG SRC="ts/header.gif" WIDTH=500 HEIGHT=150 ALT="header">
+
+<CENTER><TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="0"> 
+<TR>
+<P><TD WIDTH="80" BACKGROUND="ts/star1.gif"><IMG SRC="ts/imagespacer.gif" WIDTH="129" HEIGHT="1" BORDER="0"></TD> <TD WIDTH="*" VALIGN="TOP">
+<P><CENTER><IMG SRC="ts/casey4.jpg" HEIGHT=350 Alt="casey" WIDTH="300"><P><FONT FACE="COMIC SANS MS" COLOR="#000080"><P ALIGN="CENTER">Howdy! My name is Casey James. I just turned 4. I love  <B</FONT><FONT FACE="TinkerToy" COLOR="#cc0033">Buzz and Woody.<FONT FACE="TinkerToy" COLOR="#000080">  I can't wait until mommy can buy Toy Story 2 for me. She says I will get it for Christmas.  *giggle<P><IMG SRC="ts/pig.gif" WIDTH=120 HEIGHT=129 alt="pig"></P>
+<FONT SIZE=5>NEW----<BR>Come see me <A HREF="http://www.geocities.com/caseyscorner.geo/swim.htm">Swim</A>!!!!<BR>&<BR><A HREF="http://www.geocities.com/caseyscorner.geo/picsmonth.htm">Pics of the month</A></FONT>
+<B><P ALIGN="CENTER"><FONT COLOR="#000080" size=3>I live in Florida with my Mom and Dad, and my Big brother and Sister, Mariah and Cody. Mariah is 11 and Cody is 9. I just love being the baby. They all like to spoil me. <FONT FACE="Wingdings">J
+</P></FONT>
+<P ALIGN="CENTER"><FONT FACE="JESTER" COLOR="#cc0033">I love to watch movies. I don't care for cartoons tho. I like the ones with real people or ones like Toy Story.  I also like to watch Barney and Blues clues. I have pages about them too.</P>
+<P><CENTER><FONT SIZE=3>I have never been much of a talker. Mommy never worried about it a whole lot until I turned 3. It was apparent I was very smart, so no one seemed to know why I wasn't talking. After a few tests, and I started pre-school, they found out I have<A HREF="http://tayloredmktg.com/dyspraxia/das.html"> Developmental Verbal Apraxia</A><FONT COLOR="#000080">. If you click on the link you can learn more about it. Seems my brain just doesn't communicate with my mouth very well. I just started going to school 3 days a week to a special speech class.I have a wonderful teacher, and have even made a girlfriend. *giggle Hopefully with therapy I will learn to talk just like other kids.Mommy says I am making up for not talking tho. I can already type my name on the computer and I play my brother's spelling game. I can match the letters very well. Mom says I am making up for not talking by being so smart.
+<P>UPDATE- I am now saying lots of words. I can repeat just about anything. I am still having lots of trouble putting together a whole sentence tho. I am sure that will come in time too. It's so much easier to be able to tell Mommy and Daddy what I want or need. Life is getting so much easier for all of us. </P>
+</FONT><CENTER><IMG SRC="ts/line3.jpg" WIDTH=400 HEIGHT=75 alt="line"></P>
+<FONT FACE="TinkerToy" COLOR="#000080"><P ALIGN="CENTER" <B>This is me and my best friend Chandler. We have been best bud's since birth. His family moved to Gainesville a couple of years ago, so we only see each other about 4 times a year. You can see more pics of us if you go to the Barney page. I will be so glad when they move back! I miss him so much. We will be best buds --</
+</FONT </FONT><CENTER><IMG SRC="ts/beyond.jpg" WIDTH=300 HEIGHT=75 alt="beyond"></P>
+<CENTER><IMG SRC="ts/boys.gif" WIDTH=300 HEIGHT=300 alt="boys">
+<P>Please take a few minutes to visit my other pages. You will not be disappointed. You can play games with Pooh and Blue, Win an award, and see more pictures of me and my family.
+<P><IMG SRC="ts/links.jpg" WIDTH=500 HEIGHT="120" alt="links"><font face="Caligula">
+
+<CENTER><FONT COLOR="#339966" size=4><A HREF="http://www.geocities.com/~caseyscorner/1999.html">Family Photos</A>|</font><a
+href="http://www.geocities.com/EnchantedForest/Glade/4680/blue.html"><font face="Caligula">Blues Clues</font></a><font
+face="Caligula">|</font><a href="http://www.geocities.com/EnchantedForest/Glade/4680/barney.html"><font
+face="Caligula">Barney</font></a><font face="Caligula">|<br>
+</font><a href="http://www.geocities.com/EnchantedForest/Glade/4680/pooh.html"><font face="Caligula">|Pooh</font></a><font
+face="Caligula">|</font><a href="http://www.geocities.com/EnchantedForest/Glade/4680/awards.html"><font
+face="Caligula">Win An Award</font></a><font face="Caligula">|</font><a
+href="http://www.geocities.com/EnchantedForest/Glade/4680/rings.html"><font face="Caligula">Webrings</font></a><font
+face="Caligula">|<br>
+|</font><a href="http://www.geocities.com/EnchantedForest/Glade/4680/awards.html"><font face="Caligula">See
+my awards</font></a><font face="Caligula">|</font><a
+href="http://www.geocities.com/EnchantedForest/Glade/4680/find.html"><font face="Caligula">Play Pick a
+Pooh</font></a><font face="Caligula">|<A HREF="grow.html">Watch me Grow</A>|</font><a
+href="http://www.geocities.com/Heartland/Flats/8898/index.html"><font face="Caligula">Moms
+Page</font></a><font face="Caligula">|<br>
+|</font><a href="http://www.geocities.com/Colosseum/Arena/1280/index.html"><font
+face="Caligula">Daddy's page</font></a><font face="Caligula">|</font><a
+href="http://www.geocities.com/~caseyscorner/banner.html"><font face="Caligula">Banner
+Exchange</font></a><font face="Caligula">| |</font><a
+href="http://www.geocities.com/~caseyscorner/credit.html"><font face="Caligula">Thanks
+To..</font></a>|<A HREF="http://www.geocities.com/~caseyscorner/familypics.html"><FONT FACE="Caligula">My Family Album</A>|<A HREF="swim.html">See me swim</A>|<A HREF="http://www.geocities.com/EnchantedForest/Glade/5452/cody.html">My Brother Cody</A>|<A HREF="http://www.geocities.com/EnchantedForest/Glade/5452/mariah2.html"> My Sister Mariah</A>|<A HREF="http://www.geocities.com/EnchantedForest/Glade/4680/graphics.html">Free Graphics</A></p>
+<P><IMG SRC="ts/awards.jpg" WIDTH=400 HEIGHT=100" alt="awards">
+<P><a href="http://www.geocities.com/EnchantedForest/Glade/3891"><img
+alt="aoe" border="0" height="211" src="index/aoecloud.gif" width="212" alt="award"></a>  <a
+href="http://www.geocities.com/EnchantedForest/Glade/3891"><img alt="aoe" border="0"
+height="228" src="awards/glade4680.jpg" width="175"></a>  <A HREF="http://www.geocities.com/EnchantedForest/Glade/1003"><IMG SRC="awards/ggsaward3.jpg" BORDER=0 alt="award" width="191" height="225"></A>
+ <A HREF="http://www.geocities.com/EnchantedForest/Glade/4494"><IMG SRC="index/lofglade4680.jpg" ALT="award" BORDER="0" width="219" height="220"></A>
+<P><MAP NAME="guestbook">
+  <AREA SHAPE="RECT" COORDS="95,111,191,182" HREF="http://www.geocities.com/cgi-bin/geoplus_apps/ans_entry">
+  <AREA SHAPE="RECT" COORDS="175,39,289,107" HREF="http://www.geocities.com/~caseyscorner/geobook.html">
+</MAP>
+<IMG SRC="ts/book.jpg" WIDTH="350" HEIGHT="200" USEMAP="#guestbook" BORDER="0">
+<P><CENTER><FONT FACE="CALIGULA">My Mom is a:
+<P><A HREF="http://www.geocities.com/Heartland/Flats/8898/index.html"><IMG SRC="bugs/enchforestlg1.jpg" BORDER=0 alt="mom" width="188" height="75"></A>
+<P>If you need help please click on picture to go to her web page.
+<P><IMG SRC="/cgi-bin/counter"></P>
+
+<P><CENTER><TABLE BORDER=3><TR><TD><FONT COLOR="CC0033">Background & Graphics 1999<BR>
+Paula(aka Caseysmama)<BR>
+All Rights Reserved<BR>
+Disney images © Walt Disney Company<BR>
+In no way are they affiliated to this site
+
+</TD></TR></TABLE><P><IMG SRC="ts/bye.jpg" WIDTH=200 HEIGHT=200 alt="bye"> <P><IMG SRC="ts/animation8.gif" width="500" height="120">
+<TABLE BORDER CELLSPACING=2 BORDERCOLOR="#FFFFFF" CELLPADDING=2>
+<TR><TD VALIGN="MIDDLE" BGCOLOR="#00ffff">
+
+<EMBED src="ts.mid" width=16 height=16 autostart=true Loop=true></TD>
+</TR></TABLE>
+
+</TR>
+<P><TD WIDTH="80" BACKGROUND="ts/star1.gif"><IMG SRC="ts/imagespacer.gif" WIDTH="129" HEIGHT="1" BORDER="0"></TD> 
+</TR></B>
+</TABLE>
+</CENTER></CENTER></CENTER>
+</BODY>
+</HTML>
+<!-- text below generated by server. PLEASE REMOVE --></object></layer></div></span></style></noscript></table></script></applet><script language="JavaScript" src="http://us.i1.yimg.com/us.yimg.com/i/mc/mc.js"></script><script language="JavaScript" src="http://us.js2.yimg.com/us.js.yimg.com/lib/smb/js/hosting/cp/js_source/geov2_001.js"></script><script language="javascript">geovisit();</script><noscript><img src="http://visit.geocities.yahoo.com/visit.gif?us1256666784" alt="setstats" border="0" width="1" height="1"></noscript>
+<IMG SRC="http://geo.yahoo.com/serv?s=76001068&t=1256666784&f=us-w2" ALT=1 WIDTH=1 HEIGHT=1>

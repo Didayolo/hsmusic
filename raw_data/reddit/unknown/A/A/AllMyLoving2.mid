@@ -1,0 +1,56 @@
+<HTML>
+<HEAD><TITLE>With The Beatles</TITLE>
+  <script language="JavaScript">
+<!--
+function MM_displayStatusMsg(msgStr) { //v1.2
+  status=msgStr;
+  document.MM_returnValue = true;
+}
+//-->
+</script>
+  <script language="JavaScript">
+<!--
+function MM_goToURL() { //v1.2
+  for (var i=0; i< (MM_goToURL.arguments.length - 1); i+=2) //with arg pairs
+    eval(MM_goToURL.arguments[i]+".location='"+MM_goToURL.arguments[i+1]+"'");
+  document.MM_returnValue = false;
+}
+//-->
+</script>
+</HEAD>
+
+<BODY BACKGROUND="../ground.gif" BGCOLOR=#FFFF00 TEXT=#00000 LINK=#FF0000 VLINK=#0000FF ALINK=#FF0080>
+
+<H2><IMG SRC="withthebeatles.jpg" WIDTH=114 HEIGHT=114><I> With The Beatles</I> - 1963</H2>
+   <DL>
+	
+  <DT><IMG SRC="../midi.gif"> <A HREF="#" onMouseOver="MM_displayStatusMsg('It Won\'t Be Long');return document.MM_returnValue" onClick="MM_goToURL('parent','midi/itwontbl.mid');return document.MM_returnValue">It 
+    Won't Be Long</A> 
+  <DT><IMG SRC="../midi.gif"> <A HREF="#" onMouseOver="MM_displayStatusMsg('All I\'ve Got To Do');return document.MM_returnValue" onClick="MM_goToURL('parent','midi/Allivgot.mid');return document.MM_returnValue">All 
+    I've Got To Do</A> 
+  <DT><IMG SRC="../midi.gif"> <A HREF="#" onMouseOver="MM_displayStatusMsg('All My Loving');return document.MM_returnValue" onClick="MM_goToURL('parent','midi/allmyluv.mid');return document.MM_returnValue">All 
+    My Loving</A> 
+  <DT><IMG SRC="../midi.gif"> <A HREF="#" onMouseOver="MM_displayStatusMsg('Don\'t Bother Me');return document.MM_returnValue" onClick="MM_goToURL('parent','midi/dontboth.mid');return document.MM_returnValue">Don't 
+    Bother Me</A> 
+  <DT><IMG SRC="../midi.gif"> <a href="#" onMouseOver="MM_displayStatusMsg('Little Child');return document.MM_returnValue" onClick="MM_goToURL('parent','midi/littlech.mid');return document.MM_returnValue">Little 
+    Child</a> 
+  <DT><IMG SRC="../midi.gif"> <A HREF="#" onMouseOver="MM_displayStatusMsg('Till There Was You');return document.MM_returnValue" onClick="MM_goToURL('parent','midi/Tillther.mid');return document.MM_returnValue">Till 
+    There Was You</A> 
+  <DT><IMG SRC="../midi.gif"> <A HREF="#" onMouseOver="MM_displayStatusMsg('Please Mr. Postman');return document.MM_returnValue" onClick="MM_goToURL('parent','midi/Pleasemp.mid');return document.MM_returnValue">Please 
+    Mr. Postman</A> 
+  <DT><IMG SRC="../midi.gif"> <A HREF="#" onMouseOver="MM_displayStatusMsg('Roll Over Beethoven');return document.MM_returnValue" onClick="MM_goToURL('parent','midi/rollover.mid');return document.MM_returnValue">Roll 
+    Over Beethoven</A> 
+  <DT><IMG SRC="../midi.gif"> <a href="#" onMouseOver="MM_displayStatusMsg('Hold Me Tight');return document.MM_returnValue" onClick="MM_goToURL('parent','midi/holdmeti.mid');return document.MM_returnValue">Hold 
+    Me Tight</a> 
+  <DT><IMG SRC="../midi.gif"> <A HREF="#" onMouseOver="MM_displayStatusMsg('You Really Got A Hold On Me');return document.MM_returnValue" onClick="MM_goToURL('parent','midi/Yourealy.mid');return document.MM_returnValue">You 
+    Really Got A Hold On Me</A> 
+  <DT><IMG SRC="../midi.gif"> <a href="#" onMouseOver="MM_displayStatusMsg('I Wanna Be Your Man');return document.MM_returnValue" onClick="MM_goToURL('parent','midi/iwannabe.mid');return document.MM_returnValue">I 
+    Wanna Be Your Man</a> 
+  <DT><IMG SRC="../midi.gif"> <A HREF="#" onMouseOver="MM_displayStatusMsg('Devil In Her Heart');return document.MM_returnValue" onClick="MM_goToURL('parent','midi/Devil.mid');return document.MM_returnValue">Devil 
+    In Her Heart</a> 
+  <DT><IMG SRC="../midi.gif"> <a href="#" onMouseOver="MM_displayStatusMsg('Not A Second Time');return document.MM_returnValue" onClick="MM_goToURL('parent','midi/notaseco.mid');return document.MM_returnValue">Not 
+    A Second Time</a> 
+  <DT><IMG SRC="../midi.gif"> <a href="#" onMouseOver="MM_displayStatusMsg('Money');return document.MM_returnValue" onClick="MM_goToURL('parent','midi/money.mid');return document.MM_returnValue">Money</a> 
+</DL>
+</body>
+</HTML>

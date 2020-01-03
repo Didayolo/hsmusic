@@ -1,0 +1,41 @@
+<Asx Version = "3.0" > 
+<Param Name = "IsMediaCollectionQueryResult" Value = "1" />
+
+<Param Name = "Name" Value = "Unknown Album (5/30/2001 11:56:59 PM)" />
+
+<Param Name = "AllowShuffle" Value = "yes" />
+
+<Entry> 
+<Duration value = "00:04:11.796" />
+
+<Param Name = "Name" Value = "Track 1" />
+
+<Param Name = "Genre" Value = "Unknown" />
+
+<Param Name = "Artist" Value = "Unknown Artist" />
+
+<Author > Unknown Artist</Author>
+
+<Param Name = "Album" Value = "Unknown Album (5/30/2001 11:56:59 PM)" />
+
+<Param Name = "MediaType" Value = "audio" />
+
+<Param Name = "MediaAttribute" Value = "0" />
+
+<Param Name = "TOC" Value = "A+96+4A42+9D9B+104A5+16D0A+1AE3E+20AD2+248A3+2A332+2F3FF+36F79" />
+
+<Param Name = "OriginalIndex" Value = "0" />
+
+<Param Name = "Bitrate" Value = "64648" />
+
+<Param Name = "DigitallySecure" Value = "1" />
+
+<Param Name = "PlayCount" Value = "1" />
+
+<Param Name = "SourceURL" Value = "C:\My Documents\My Music\Unknown Artist\Unknown Album (5 30 2001 11 56 59 PM)\Track 1.wma" />
+
+<Param Name = "CreationDate" Value = "5/31/2001 12:05:51 AM" />
+
+<Ref href = "C:\My Documents\My Music\Unknown Artist\Unknown Album (5 30 2001 11 56 59 PM)\Track 1.wma"/>
+</Entry>
+</Asx>

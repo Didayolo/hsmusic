@@ -1,0 +1,459 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Fortune City -> Error: No Permission</title>
+
+
+<script language="JavaScript">
+<!-- hide
+  // ok, we have a JavaScript browser
+  var browserOK = false;
+  var pics;
+// -->
+</script>
+
+<script language="JavaScript1.1">
+<!-- hide
+  browserOK = true;
+  pics = new Array();
+// -->
+</script>
+
+<script language="JavaScript">
+<!-- hide
+var objCount = 0;
+
+function preload(name, first, second) {  
+  if (browserOK) {     
+    pics[objCount] = new Array(3);
+    pics[objCount][0] = new Image();
+    pics[objCount][0].src = first;
+    pics[objCount][1] = new Image();
+    pics[objCount][1].src = second;
+    pics[objCount][2] = name;
+    objCount++;
+  }
+}
+
+function on(name){
+  if (browserOK) {
+     for (i = 0; i < objCount; i++) {
+      if (document.images[pics[i][2]] != null)
+        if (name != pics[i][2]) { 
+          // set back all other images
+          document.images[pics[i][2]].src = pics[i][0].src;
+        } else {
+           // show the second image
+           document.images[pics[i][2]].src = pics[i][1].src;
+        }
+    }
+  }
+}
+
+function off(){
+  if (browserOK) {
+     for (i = 0; i < objCount; i++) {
+      // set back all images
+      if (document.images[pics[i][2]] != null) 
+        document.images[pics[i][2]].src = pics[i][0].src;
+    }
+  }
+}
+
+// preload images - you have to specify which images should be preloaded
+// and which Image-object on the web-page they belong to (this is the first
+// argument). 
+
+
+
+// -->
+</script>
+
+<STYLE TYPE="text/css" TITLE="No underline">
+<!--
+A:link, A:visited, A:active { text-decoration: none } 
+#main { font-family: verdana; font-size: 9pt; color: white }
+#blue { font-family: verdana; font-size: 9pt; color: #9999cc }
+// -->
+</STYLE>
+
+</head>
+
+<body vlink="#ff9900" bgcolor="black" background="/images/tile_home.gif">
+
+<FORM METHOD="POST" ACTION="">
+</FORM>
+<center>
+<!--Table for centering purposes -->
+<table cellspacing="0" cellpadding="0" border="0" width="785">
+<tr>
+	<td align="center"><a href="/explore/homepage/index.html"><img src="/images/home_logo.gif" width=390 height=124 border=0 alt=""></a></td>
+</tr>
+
+
+<tr><td valign="top">
+	<!-- outer frame -->
+	<table cellspacing="0" cellpadding="0" border="0" align="left" width="785">
+	<tr>
+		<td colspan=5 valign="top" width="10"><img src="/images/error/error-panel_topleft.gif" width=10 height=10 hspace=0 vspace=0 border=0 alt=""></td>
+		<td valign="top" width="765" colspan=3><img src="/images/error/error-panel_horiz.gif" width=765 height=4 hspace=0 vspace=0 border=0 alt=""></td>
+		<td colspan=5 valign="top" width="10"><img src="/images/error/error-panel_topright.gif" width=10 height=10 hspace=0 vspace=0 border=0 alt=""></td>
+	</tr>
+	<tr>	
+		<td bgcolor="#cc6600"><img src="/images/plain-pixel.gif" width=1 height=1 hspace=0 vspace=0></td><td bgcolor="#ff9900"><img src="/images/plain-pixel.gif" width=1 height=1 hspace=0 vspace=0></td><td bgcolor="#ff9900"><img src="/images/plain-pixel.gif" width=1 height=1 hspace=0 vspace=0></td><td bgcolor="#cc6600"><img src="/images/plain-pixel.gif" width=1 height=1 hspace=0 vspace=0></td>
+		<td width=6><img src="/images/plain-pixel.gif" width=6 height=1 hspace=0 vspace=0></td>
+		<td colspan="3" align="left" valign="top">
+
+			<table cellspacing="0" cellpadding="0" border="0" align="left" width="765">
+			<tr>
+				<td width="7" rowspan="4" valign="top"><img src="/images/error/error_panel-left.gif" width=7 height=48 hspace=0 vspace=0 border=0 alt=""></td>	
+				<td bgcolor="#333366" height="25" align="left" valign="bottom"><img src="/images/error/error-404_ahead.gif" hspace=0 vspace=0 border=0 alt=""></td>
+				<td bgcolor="#333366" align="right" VALIGN="bottom"><font face="verdana" color="white" size="1">&nbsp;</font></td>
+				<td width="7" rowspan="4" valign="top"><img src="/images/error/error_panel-right.gif" width=7 height=48 hspace=0 vspace=0 border=0 alt=""></td>
+			</tr>
+			<tr>
+				<td colspan="2" height="2"><img src="/images/error/error_pixel-orange.gif" width="751" height=2 hspace=0 vspace=0 border=0 alt=""></td>
+			</tr>
+			<tr>
+				<td bgcolor="#333366" colspan="2" height="16" align="right"><a href="/explore/homepage/index.html"><img src="/images/error/error-path_fchome.gif" name="fchome" width=54 height=14 hspace=5 vspace=1 border=0 alt=""></a></td>
+			</tr>
+			<tr>
+				<td height="5" colspan="2"><img src="/images/plain-pixel.gif" width=1 height=5 hspace=0 vspace=0 border=0 alt=""></td>
+			</tr>
+			<tr>
+				<td height="5" colspan="4"></td>
+			</tr>			
+			<tr>
+				<td colspan="4"><table cellspacing="0" cellpadding="0" border="0" width="765">
+					<tr valign="top">
+						<td width="5" rowspan="1"><img src="/images/plain-pixel.gif" width=5 height=1 alt="" border="0"></td>
+
+						<!-- inner tables -->				
+						<td valign="top">
+							<table cellspacing="0" cellpadding="0" border="0" width="745" align="left">
+							<tr>
+								<td colspan=5 valign="top" width=10><img src="/images/panel_topleft.gif" width=10 height=10 hspace=0 vspace=0 border=0 alt=""></td>
+								<td valign="top" align="left" height="4"><img src="/images/panel_horiz.gif" width=735 height=4 hspace=0 vspace=0 border=0 alt=""></td>
+								<td colspan=5 valign="top" width=10><img src="/images/panel_topright.gif" width=10 height=10 hspace=0 vspace=0 border=0 alt=""></td>
+							</tr>
+							<tr>	
+								<td bgcolor="#333333" rowspan=2><img src="/images/plain-pixel.gif" width=1 height=1 hspace=0 vspace=0></td><td bgcolor="#333333" rowspan=2><img src="/images/plain-pixel.gif" width=1 height=1 hspace=0 vspace=0></td><td bgcolor="#333333" rowspan=2><img src="/images/plain-pixel.gif" width=1 height=1 hspace=0 vspace=0></td><td bgcolor="#333333" rowspan=2><img src="/images/plain-pixel.gif" width=1 height=1 hspace=0 vspace=0></td>	
+								<td width=6><img src="/images/plain-pixel.gif" width=6 height=1 hspace=0 vspace=0></td>
+								<td colspan="1" rowspan="1" align="left" valign="top" height=30><font face=verdana size=4 color=orange><b>The page you requested can no longer be found on this server</b></td>
+								<td width=6><img src="/images/plain-pixel.gif" width=6 height=1 hspace=0 vspace=0></td>								
+								<td bgcolor="#333333" rowspan=2><img src="/images/plain-pixel.gif" width=1 height=1 hspace=0 vspace=0></td><td bgcolor="#333333" rowspan=2><img src="/images/plain-pixel.gif" width=1 height=1 hspace=0 vspace=0></td><td bgcolor="#333333" rowspan=2><img src="/images/plain-pixel.gif" width=1 height=1 hspace=0 vspace=0></td><td bgcolor="#333333" rowspan=2><img src="/images/plain-pixel.gif" width=1 height=1 hspace=0 vspace=0></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+
+								<table cellspacing="0" cellpadding="0" border="0">
+									<tr><td>
+									<table cellspacing="0" cellpadding="0" border="0" height=300>
+										<tr><td colspan=3 height=30><font face=verdana size=3 color=white>To view a similar site, click on a link below.</font></td></tr>
+										<tr><td rowspan=11><img src="/images/plain-pixel.gif" width=1 height=1 hspace=0 vspace=0></td></tr>
+										<tr><td valign=middle align=center><a href="/explore/category/artsandhumanities.html"><img src="/images/explore_button.gif" border=0></a></td><td align=left><a href="/explore/category/artsandhumanities.html"><font face=verdana size=3 color=white>Arts & Humanities</font></a></td></tr>
+										<tr><td valign=middle align=center><a href="/explore/category/businessandcareers.html"><img src="/images/explore_button.gif" border=0></a></td><td align=left><a href="/explore/category/businessandcareers.html"><font face=verdana size=3 color=white>Business & Careers</font></a></td></tr>
+										<tr><td valign=middle align=center><a href="/explore/category/computersandinternet.html"><img src="/images/explore_button.gif" border=0></a></td><td align=left><a href="/explore/category/computersandinternet.html"><font face=verdana size=3 color=white>Computers & Internet</font></a></td></tr>
+										<tr><td valign=middle align=center><a href="/explore/category/entertainment.html"><img src="/images/explore_button.gif" border=0></a></td><td align=left><a href="/explore/category/entertainment.html"><font face=verdana size=3 color=white>Entertainment</font></a></td></tr>
+										<tr><td valign=middle align=center><a href="/explore/category/homeandfamily.html"><img src="/images/explore_button.gif" border=0></a></td><td align=left><a href="/explore/category/homeandfamily.html"><font face=verdana size=3 color=white>Home & Family</font></a></td></tr>
+										<tr><td valign=middle align=center><a href="/explore/category/peopleandchat.html"><img src="/images/explore_button.gif" border=0></a></td><td align=left><a href="/explore/category/peopleandchat.html"><font face=verdana size=3 color=white>People & Chat</font></a></td></tr>
+										<tr><td valign=middle align=center><a href="/explore/category/recreationandsports.html"><img src="/images/explore_button.gif" border=0></a></td><td align=left><a href="/explore/category/recreationandsports.html"><font face=verdana size=3 color=white>Recreation & Sports</font></a></td></tr>
+										<tr><td valign=middle align=center><a href="/explore/category/international.html"><img src="/images/explore_button.gif" border=0></a></td><td align=left><a href="/explore/category/international.html"><font face=verdana size=3 color=white>International</font></a></td></tr>
+										<tr><td valign=middle align=center><a href="/explore/category/scifiandparanormal.html"><img src="/images/explore_button.gif" border=0></a></td><td align=left><a href="/explore/category/scifiandparanormal.html"><font face=verdana size=3 color=white>Sci-fi & Paranormal</font></a></td></tr>
+										<tr><td valign=middle align=center><a href="/explore/category/travelandtransport.html"><img src="/images/explore_button.gif" border=0></a></td><td align=left><a href="/explore/category/travelandtransport.html"><font face=verdana size=3 color=white>Travel & Transport</font></a></td></tr>
+										<tr><td valign=middle align=center></td><td align=left></td></tr>
+
+									</table>
+									</td>
+									<td>
+									<table cellspacing="0" cellpadding="0" border="0" height="300">
+										<tr>
+											<td align=center>
+												<a href="/explore/index.html"><img src="/images/error/error-404_explore.gif" hspace=0 vspace=0 border=0 alt=""></a>
+											</td>
+											<td align=center>
+												<a href="/build/index.html"><img src="/images/error/error-404_build.gif" hspace=0 vspace=0 border=0 alt=""></a>
+											</td>
+											<td align=center>
+												<a href="/interact/index.html"><img src="/images/error/error-404_interact.gif" hspace=0 vspace=0 border=0 alt=""></a>
+											</td>
+											<td align=center>
+												<a href="/shop/index.html"><img src="/images/error/error-404_shop.gif" hspace=0 vspace=0 border=0 alt=""></a>
+											</td>
+										</tr>
+										<tr><td colspan="4" align="center" valign="middle">
+												<SCRIPT LANGUAGE="JavaScript">
+												<!--
+												var ord = (Math.random() + "") * 1000000000000000000
+												document.writeln( "<IFRAME SRC=\"" + "http://ad.doubleclick.net/adi/fc.us468/core/lostmap/map;s1=c;s2=lost;s3=map;pos=1;tag=i;sz=468x60;mtile=1;ord=" + ord + "?\" " + "width=468 height=60 frameborder=no border=0 MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=no>")
+												document.writeln( "<A HREF=\"" + "http://ad.doubleclick.net/jump/fc.us468/core/lostmap/map;abr=!ie;s1=c;s2=lost;s3=map;pos=1;tag=i;sz=468x60;mtile=1;ord=" + ord + "?\">")
+												document.writeln( "<IMG SRC=\"" + "http://ad.doubleclick.net/ad/fc.us468/core/lostmap/map;abr=!ie;s1=c;s2=lost;s3=map;pos=1;tag=i;sz=468x60;mtile=1;ord=" + ord + "?\" " + "height=60 width=468 border=0></A>")
+												document.writeln( "</IFRAME>" )
+												//-->
+												</SCRIPT>
+												<NOSCRIPT>
+												<IFRAME SRC="http://ad.doubleclick.net/adi/fc.us468/core/lostmap/map;s1=c;s2=lost;s3=map;pos=1;tag=i;sz=468x60;mtile=1; ord=1022?" width=468 height=60 frameborder=no border=0 MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=no>
+												<A HREF="http://ad.doubleclick.net/jump/fc.us468/core/lostmap/map;abr=!ie;s1=c;s2=lost;s3=map;pos=1;tag=i;sz=468x60;mtile=1; ord=1022?"><IMG SRC="http://ad.doubleclick.net/ad/fc.us468/core/lostmap/map;abr=!ie;s1=c;s2=lost;s3=map;pos=1;tag=i;sz=468x60;mtile=1; ord=1022?" height=60 width=468 border=0></A>
+												</IFRAME>
+												</NOSCRIPT>
+										</td></tr>
+										<tr>
+											<td colspan=2 align=center>
+												<table cellspacing="0" cellpadding="0" border="0" width="227" align="left">
+													<tr>
+														<td width=1 height="0"></td><td width=1></td><td width=1></td><td width=1></td>
+														<td width=6><img src="/images/plain-pixel.gif" width=6 height=1 hspace=0 vspace=0></td>
+														<td width="207"></td>
+														<td width=6><img src="/images/plain-pixel.gif" width=6 height=1 hspace=0 vspace=0></td>
+														<td width=1></td><td width=1></td><td width=1></td><td width=1></td>
+													</tr>
+													<tr>
+														<td colspan=11 valign="top"><img src="/images/panel_topleft.gif" width=10 height=10 hspace=0 vspace=0 border=0 alt="" align="left"><img src="/images/panel_horiz.gif" width=207 height=4 hspace=0 vspace=0 border=0 alt="" align="left"><img src="/images/panel_topright.gif" width=10 height=10 hspace=0 vspace=0 border=0 alt=""></td>
+													</tr>
+													<tr>	
+														<td bgcolor="#333333" rowspan="2"><img src="/images/plain-pixel.gif" width=1 height=1 hspace=0 vspace=0></td><td bgcolor="#333333" rowspan="2"><img src="/images/plain-pixel.gif" width=1 height=1 hspace=0 vspace=0></td><td bgcolor="#333333" rowspan="2"><img src="/images/plain-pixel.gif" width=1 height=1 hspace=0 vspace=0></td><td bgcolor="#333333" rowspan="2"><img src="/images/plain-pixel.gif" width=1 height=1 hspace=0 vspace=0></td>
+														<td colspan="3" rowspan="1" align="left" valign="top" height="50"><a href="/build/coolcitizen/index.html"><img src="/images/build/icon-small_awards.gif" width=50 height=50 hspace=0 vspace=0 border=0 align="left" alt=""></a><img src="/images/error/error-404_coolsites.gif" hspace=0 vspace=0 border=0 alt=""><br><img src="/images/rule-home.gif" width=169 height=2 hspace=0 vspace=0 border=0 alt=""><br><a href="/build/coolcitizen/index.html"><font face="verdana" color="white" size="2">Check out our coolest citizens homepages.</font></a></td>
+														<td bgcolor="#333333" rowspan="2"><img src="/images/plain-pixel.gif" width=1 height=1 hspace=0 vspace=0></td><td bgcolor="#333333" rowspan="2"><img src="/images/plain-pixel.gif" width=1 height=1 hspace=0 vspace=0></td><td bgcolor="#333333" rowspan="2"><img src="/images/plain-pixel.gif" width=1 height=1 hspace=0 vspace=0></td><td bgcolor="#333333" rowspan="2"><img src="/images/plain-pixel.gif" width=1 height=1 hspace=0 vspace=0></td>
+													</tr>
+													<tr valign="top">
+														<td width="6"><img src="/images/interact/plain-pixel.gif" width=6 height=1 hspace=0 vspace=0 border=0 alt=""></td>
+														<td valign="top"></td>
+														<td width="6"><img src="/images/interact/plain-pixel.gif" width=6 height=1 hspace=0 vspace=0 border=0 alt=""></td>
+													</tr>
+													<tr>
+														<td colspan=5 valign="top" width=10><img src="/images/panel_botleft.gif" width=10 height=10 hspace=0 vspace=0 border=0 alt=""></td>
+														<td colspan="1" valign="bottom"><img src="/images/panel_horiz.gif" width=207 height=4 hspace=0 vspace=0 border=0 alt=""></td>
+														<td colspan=5 valign="top" width=10><img src="/images/panel_botright.gif" width=10 height=10 hspace=0 vspace=0 border=0 alt=""></td>
+													</tr>
+												</table>
+											</td>
+											<td colspan=2 align=center>
+												<table cellspacing="0" cellpadding="0" border="0" width="227" align="left">
+													<tr>
+														<td width=1 height="0"></td><td width=1></td><td width=1></td><td width=1></td>
+														<td width=6><img src="/images/plain-pixel.gif" width=6 height=1 hspace=0 vspace=0></td>
+														<td width="207"></td>
+														<td width=6><img src="/images/plain-pixel.gif" width=6 height=1 hspace=0 vspace=0></td>
+														<td width=1></td><td width=1></td><td width=1></td><td width=1></td>
+													</tr>
+													<tr>
+														<td colspan=11 valign="top"><img src="/images/panel_topleft.gif" width=10 height=10 hspace=0 vspace=0 border=0 alt="" align="left"><img src="/images/panel_horiz.gif" width=207 height=4 hspace=0 vspace=0 border=0 alt="" align="left"><img src="/images/panel_topright.gif" width=10 height=10 hspace=0 vspace=0 border=0 alt=""></td>
+													</tr>
+													<tr>	
+														<td bgcolor="#333333" rowspan="2"><img src="/images/plain-pixel.gif" width=1 height=1 hspace=0 vspace=0></td><td bgcolor="#333333" rowspan="2"><img src="/images/plain-pixel.gif" width=1 height=1 hspace=0 vspace=0></td><td bgcolor="#333333" rowspan="2"><img src="/images/plain-pixel.gif" width=1 height=1 hspace=0 vspace=0></td><td bgcolor="#333333" rowspan="2"><img src="/images/plain-pixel.gif" width=1 height=1 hspace=0 vspace=0></td>
+														<td colspan="3" rowspan="1" align="left" valign="top" height="50"><a href="/join/index.html"><img src="/images/icon-small_admin.gif" width=50 height=50 hspace=0 vspace=0 border=0 align="left" alt=""></a><img src="/images/error/error-404_joinnow.gif" hspace=0 vspace=0 border=0 alt=""><br><img src="/images/rule-home.gif" width=169 height=2 hspace=0 vspace=0 border=0 alt=""><br><a href="/join/index.html"><font face="verdana" color="white" size="2">20 megabytes FREE</font></a></td>
+														<td bgcolor="#333333" rowspan="2"><img src="/images/plain-pixel.gif" width=1 height=1 hspace=0 vspace=0></td><td bgcolor="#333333" rowspan="2"><img src="/images/plain-pixel.gif" width=1 height=1 hspace=0 vspace=0></td><td bgcolor="#333333" rowspan="2"><img src="/images/plain-pixel.gif" width=1 height=1 hspace=0 vspace=0></td><td bgcolor="#333333" rowspan="2"><img src="/images/plain-pixel.gif" width=1 height=1 hspace=0 vspace=0></td>
+													</tr>
+													<tr valign="top">
+														<td width="6"><img src="/images/interact/plain-pixel.gif" width=6 height=1 hspace=0 vspace=0 border=0 alt=""></td>
+														<td valign="top"></td>
+														<td width="6"><img src="/images/interact/plain-pixel.gif" width=6 height=1 hspace=0 vspace=0 border=0 alt=""></td>
+													</tr>
+													<tr>
+														<td colspan=5 valign="top" width=10><img src="/images/panel_botleft.gif" width=10 height=10 hspace=0 vspace=0 border=0 alt=""></td>
+														<td colspan="1" valign="bottom"><img src="/images/panel_horiz.gif" width=207 height=4 hspace=0 vspace=0 border=0 alt=""></td>
+														<td colspan=5 valign="top" width=10><img src="/images/panel_botright.gif" width=10 height=10 hspace=0 vspace=0 border=0 alt=""></td>
+													</tr>
+												</table>
+											</td>
+										</tr>						
+										
+											<tr>
+										<td colspan=4>
+										<table><tr>
+										<td width="156" align=left>
+										<SCRIPT LANGUAGE="JavaScript">
+													<!--
+													document.writeln( "<IFRAME SRC=\"" + "http://ad.doubleclick.net/adi/fc.us120/core/lostmap/map;s1=c;s2=lost;s3=map;pos=3;tag=i;sz=120x60;mtile=3;" + ord + "?\"" + "width=120 height=60 frameborder=no border=0 MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=no>")
+													document.writeln( "<A HREF=\"" + "http://ad.doubleclick.net/jump/fc.us120/core/lostmap/map;abr=!ie;s1=c;s2=lost;s3=map;pos=2;tag=i;sz=120x60;mtile=3;" + ord + "?\">")
+													document.writeln( "<IMG SRC=\"" + "http://ad.doubleclick.net/ad/fc.us120/core/lostmap/map;abr=!ie;s1=c;s2=lost;s3=map;pos=3;tag=i;sz=120x60;mtile=3;" + ord + "?\"" + "height=60 width=120 border=0></A>")
+													document.writeln( "</IFRAME>" )
+													//-->
+													</SCRIPT>
+													<NOSCRIPT>
+													<IFRAME SRC="http://ad.doubleclick.net/adi/fc.us120/core/lostmap/map;s1=c;s2=lost;s3=map;pos=3;tag=i;sz=120x60;mtile=3; ord=1022?" width=120 height=60 frameborder=no border=0 MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=no>
+													<A HREF="http://ad.doubleclick.net/jump/fc.us120/core/lostmap/map;abr=!ie;s1=c;s2=lost;s3=map;pos=3;tag=i;sz=120x60;mtile=2; ord=1022?"><IMG SRC="http://ad.doubleclick.net/ad/fc.us120/core/lostmap/map;abr=!ie;s1=c;s2=lost;s3=map;pos=3;tag=i;sz=120x60;mtile=3; ord=1022?" height=60 width=120 border=0></A>
+													</IFRAME>
+													</NOSCRIPT></td>
+										<td width="156" align=center>
+										<SCRIPT LANGUAGE="JavaScript">
+													<!--
+													document.writeln( "<IFRAME SRC=\"" + "http://ad.doubleclick.net/adi/fc.us120/core/lostmap/map;s1=c;s2=lost;s3=map;pos=4;tag=i;sz=120x60;mtile=4;" + ord + "?\"" + "width=120 height=60 frameborder=no border=0 MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=no>")
+													document.writeln( "<A HREF=\"" + "http://ad.doubleclick.net/jump/fc.us120/core/lostmap/map;abr=!ie;s1=c;s2=lost;s3=map;pos=2;tag=i;sz=120x60;mtile=4;" + ord + "?\">")
+													document.writeln( "<IMG SRC=\"" + "http://ad.doubleclick.net/ad/fc.us120/core/lostmap/map;abr=!ie;s1=c;s2=lost;s3=map;pos=4;tag=i;sz=120x60;mtile=4;" + ord + "?\"" + "height=60 width=120 border=0></A>")
+													document.writeln( "</IFRAME>" )
+													//-->
+													</SCRIPT>
+													<NOSCRIPT>
+													<IFRAME SRC="http://ad.doubleclick.net/adi/fc.us120/core/lostmap/map;s1=c;s2=lost;s3=map;pos=4;tag=i;sz=120x60;mtile=4; ord=1022?" width=120 height=60 frameborder=no border=0 MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=no>
+													<A HREF="http://ad.doubleclick.net/jump/fc.us120/core/lostmap/map;abr=!ie;s1=c;s2=lost;s3=map;pos=4;tag=i;sz=120x60;mtile=2; ord=1022?"><IMG SRC="http://ad.doubleclick.net/ad/fc.us120/core/lostmap/map;abr=!ie;s1=c;s2=lost;s3=map;pos=4;tag=i;sz=120x60;mtile=4; ord=1022?" height=60 width=120 border=0></A>
+													</IFRAME>
+													</NOSCRIPT>
+										</td>
+										<td width="156" align=right>
+										<SCRIPT LANGUAGE="JavaScript">
+														<!--
+														document.writeln( "<IFRAME SRC=\"" + "http://ad.doubleclick.net/adi/fc.us120/core/lostmap/map;s1=c;s2=lost;s3=map;pos=5;tag=i;sz=120x60;mtile=5;" + ord + "?\"" + "width=120 height=60 frameborder=no border=0 MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=no>")
+														document.writeln( "<A HREF=\"" + "http://ad.doubleclick.net/jump/fc.us120/core/lostmap/map;abr=!ie;s1=c;s2=lost;s3=map;pos=2;tag=i;sz=120x60;mtile=5;" + ord + "?\">")
+														document.writeln( "<IMG SRC=\"" + "http://ad.doubleclick.net/ad/fc.us120/core/lostmap/map;abr=!ie;s1=c;s2=lost;s3=map;pos=5;tag=i;sz=120x60;mtile=5;" + ord + "?\"" + "height=60 width=120 border=0></A>")
+														document.writeln( "</IFRAME>" )
+														//-->
+														</SCRIPT>
+														<NOSCRIPT>
+														<IFRAME SRC="http://ad.doubleclick.net/adi/fc.us120/core/lostmap/map;s1=c;s2=lost;s3=map;pos=5;tag=i;sz=120x60;mtile=5; ord=1022?" width=120 height=60 frameborder=no border=0 MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=no>
+														<A HREF="http://ad.doubleclick.net/jump/fc.us120/core/lostmap/map;abr=!ie;s1=c;s2=lost;s3=map;pos=5;tag=i;sz=120x60;mtile=2; ord=1022?"><IMG SRC="http://ad.doubleclick.net/ad/fc.us120/core/lostmap/map;abr=!ie;s1=c;s2=lost;s3=map;pos=5;tag=i;sz=120x60;mtile=5; ord=1022?" height=60 width=120 border=0></A>
+														</IFRAME>
+														</NOSCRIPT>
+																					</td></tr></table>
+										
+										
+										</td></tr>
+										
+										
+										<tr><td colspan="4" align="center" valign="middle">
+												<SCRIPT LANGUAGE="JavaScript">
+												<!--
+												document.writeln( "<IFRAME SRC=\"" + "http://ad.doubleclick.net/adi/fc.us468/core/lostmap/map;s1=c;s2=lost;s3=map;pos=2;tag=i;sz=468x60;mtile=2;ord=" + ord + "?\" " + "width=468 height=60 frameborder=no border=0 MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=no>")
+												document.writeln( "<A HREF=\"" + "http://ad.doubleclick.net/jump/fc.us468/core/lostmap/map;abr=!ie;s1=c;s2=lost;s3=map;pos=2;tag=i;sz=468x60;mtile=2;ord=" + ord + "?\">")
+												document.writeln( "<IMG SRC=\"" + "http://ad.doubleclick.net/ad/fc.us468/core/lostmap/map;abr=!ie;s1=c;s2=lost;s3=map;pos=2;tag=i;sz=468x60;mtile=2;ord=" + ord + "?\" " + "height=60 width=468 border=0></A>")
+												document.writeln( "</IFRAME>" )
+												//-->
+												</SCRIPT>
+												<NOSCRIPT>
+												<IFRAME SRC="http://ad.doubleclick.net/adi/fc.us468/core/lostmap/map;s1=c;s2=lost;s3=map;pos=2;tag=i;sz=468x60;mtile=2; ord=1022?" width=468 height=60 frameborder=no border=0 MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=no>
+												<A HREF="http://ad.doubleclick.net/jump/fc.us468/core/lostmap/map;abr=!ie;s1=c;s2=lost;s3=map;pos=2;tag=i;sz=468x60;mtile=2; ord=1022?"><IMG SRC="http://ad.doubleclick.net/ad/fc.us468/core/lostmap/map;abr=!ie;s1=c;s2=lost;s3=map;pos=2;tag=i;sz=468x60;mtile=2; ord=1022?" height=60 width=468 border=0></A>
+												</IFRAME>
+												</NOSCRIPT>
+										</td></tr>
+										
+										
+									
+										
+										
+									</table>
+									</td></tr>
+								</table>
+
+								</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td colspan=5 valign="top" width=10><img src="/images/panel_botleft.gif" width=10 height=10 hspace=0 vspace=0 border=0 alt=""></td>
+								<td colspan="1" valign="bottom" align="left"><img src="/images/panel_horiz.gif" width=735 height=4 hspace=0 vspace=0 border=0 alt=""></td>
+								<td colspan=5 valign="top" width=10><img src="/images/panel_botright.gif" width=10 height=10 hspace=0 vspace=0 border=0 alt=""></td>
+							</tr>
+							</table>
+						</td>			
+					</tr>
+					</table></td>
+			</tr>	
+		</table></td>
+		
+		<td width=6><img src="/images/plain-pixel.gif" width=6 height=1 hspace=0 vspace=0></td>
+<td bgcolor="#cc6600"><img src="/images/plain-pixel.gif" width=1 height=1 hspace=0 vspace=0></td><td bgcolor="#ff9900"><img src="/images/plain-pixel.gif" width=1 height=1 hspace=0 vspace=0></td><td bgcolor="#ff9900"><img src="/images/plain-pixel.gif" width=1 height=1 hspace=0 vspace=0></td><td bgcolor="#cc6600"><img src="/images/plain-pixel.gif" width=1 height=1 hspace=0 vspace=0></td>
+	</tr>
+	<tr>
+	    <td colspan=5 valign="top" width="10"><img src="/images/error/error-panel_botleft.gif" width=10 height=10 hspace=0 vspace=0 border=0 alt=""></td>
+		<td colspan="3" valign="bottom" align="left"><img src="/images/error/error-panel_horiz.gif" width=765 height=4 hspace=0 vspace=0 border=0 alt=""></td>
+	    <td colspan=5 valign="top" width="10"><img src="/images/error/error-panel_botright.gif" width=10 height=10 hspace=0 vspace=0 border=0 alt=""></td>
+	</tr>
+	</table>
+
+	</td></tr>
+<tr valign="top"><td colspan=13 align="left"><img src="/images/plain-pixel.gif" width=85 height=1 hspace=0 vspace=0 border=0 alt="" align="left">
+
+<!--SUBNAV-->
+<table cellspacing="0" cellpadding="0" border="0" width="612"> 
+	<tr>
+		<td height="10"><img src="/images/plain-pixel.gif" width=1 height=10 hspace=0 vspace=0 border=0 alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<table cellspacing="0" cellpadding="0" border="0" background="" width="597">
+				<tr>
+					<td width="0"></td>
+					<td width="10" height="0"></td>
+					<td width="48"></td>
+					<td width="529"></td>
+					<td width="10"></td>
+				</tr>
+				<tr>
+					<td height="4"></td>
+					<td rowspan="2"><img src="/images/panel_topleft.gif" width=10 height=10 hspace=0 vspace=0 border=0 alt=""></td>
+					<td colspan="2"><img src="/images/panel_horiz.gif" width=577 height=4 hspace=0 vspace=0 border=0 alt=""></td>
+					<td rowspan="2"><img src="/images/panel_topright.gif" width=10 height=10 hspace=0 vspace=0 border=0 alt=""></td>
+				</tr>
+				<tr>
+					<td height="6"></td>
+					<td colspan="2" rowspan="3" valign="top">
+						<A HREF="http://www.fcmail.com"><img src="/images/globalnav_mail.gif" width=72 height=34 hspace=4 vspace=13 border=0 align="left" alt=""></A>
+						<img src="/images/panel_vert.gif" width=4 height=60 hspace=3 vspace=0 border=0 alt="" align="left">
+						<a href="http://www.fortunecity.com"><img src="/images/globalnav_logo.gif" width=33 height=34 hspace=6 vspace=13 border=0 align="left" alt=""></a>
+						<table cellpadding="0" cellspacing="0" border="0" align="left">
+							<tr><td height="17"></td></tr>
+							<tr>
+								<td>
+									<font face="verdana" color="white" size="1">
+									<a href="/tour/index.html"><font face="verdana" color="white" size="1">SITE TOUR</font></a><img src="/images/globalnav_bullet.gif" width=5 height=5 hspace=3 vspace=0 border=0 alt=""><a href="/sitemap/index.html"><font face="verdana" color="white" size="1">MAP</font></a><img src="/images/globalnav_bullet.gif" width=5 height=5 hspace=3 vspace=0 border=0 alt=""><a href="/news/index.html"><font face="verdana" color="white" size="1">WHAT'S NEW</font></a><BR>
+									</font>
+								</td>
+							</tr>
+							<tr><td height="3"></td></tr>
+							<tr>
+								<td>
+									<font face="verdana" color="white" size="1">
+									<a href="/help/index.html" id="globalnav"><font face="verdana" color="#ffffff" size="1">HELP</font></a><img src="/images/globalnav_bullet.gif" width=5 height=5 hspace=3 vspace=0 border=0 alt=""><a href="/about/index.html" id="globalnav"><font face="verdana" color="#ffffff" size="1">ABOUT FC</font></a><img src="/images/globalnav_bullet.gif" width=5 height=5 hspace=3 vspace=0 border=0 alt=""><a href="/advertise/index.html"><font face="verdana" color="white" size="1">ADVERTISE</font></a>
+									</font>
+								</td>
+							</tr>
+						</table>
+						<img src="/images/panel_vert.gif" width=4 height=60 hspace=6 vspace=0 border=0 alt="" align="left">
+						<table cellpadding="0" cellspacing="0" border="0" align="left">
+							<FORM METHOD=GET action=http://www2.fortunecity.com/apps/Search/Search NAME=search>
+							<tr>
+								<td height="10"><img src="/images/plain-pixel.gif" height=10 width=1 vspace=0 hspace=0 border=0 alt=""></td>
+								<td rowspan=3><img src="/images/plain-pixel.gif" width=3><INPUT TYPE=IMAGE src="/images/globalnav_goto.gif" width=53 height=32 vspace=6 border=0 alt=""></td>
+							</tr>
+							<tr>
+								<td valign="bottom" height="20"><img src="/images/globalnav_search.gif" width=59 height=17 hspace="0" vspace="0" border=0 alt="">&nbsp;<INPUT type="text" size="14" name="searchterms"></td>
+							</tr>
+							<tr>
+								<td align="left">
+								<INPUT TYPE="radio" NAME=searchtype VALUE="fc:FC_index" hspace="0" vspace="0" border="0">
+								<font face="verdana" color="white" size="1">FORTUNE CITY
+								<INPUT TYPE="radio" NAME=searchtype checked VALUE="goto" vspace="0">THE WEB</font></td>
+							</tr>
+							</FORM>
+						</table>
+
+					</td>
+				</tr>
+				<tr>
+					<td height="48"></td>
+					<td align="left"><img src="/images/panel_vert.gif" width=4 height=48 hspace=0 vspace=0 border=0 alt=""></td>
+					<td align="right"><img src="/images/panel_vert.gif" width=4 height=48 hspace=0 vspace=0 border=0 alt=""></td>				
+				</tr>
+				<tr>
+					<td height="6"></td>
+					<td rowspan="2"><img src="/images/panel_botleft.gif" width=10 height=10 hspace=0 vspace=0 border=0 alt=""></td>
+					<td rowspan="2"><img src="/images/panel_botright.gif" width=10 height=10 hspace=0 vspace=0 border=0 alt=""></td>
+				</tr>
+				<tr>
+					<td height="4"></td>
+					<td colspan="2"><img src="/images/panel_horiz.gif" width=577 height=4 hspace=0 vspace=0 border=0 alt=""></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+
+<!-- end table for centering purposes -->
+</td></tr></table>
+</center>
+
+
+
+</body>
+</html>

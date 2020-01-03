@@ -1,0 +1,19 @@
+<HTML>
+<HEAD>
+<TITLE>ERROR 404 Not Found</TITLE>
+</HEAD>
+<BODY LINK="#0000cc" VLINK="#0000cc">
+<FONT SIZE=+1>
+<B>ERROR 404</B> &nbsp;-&nbsp; The requested resource could not be found.
+</FONT>
+<P>Additional information:&nbsp;
+<A HREF="/httpd/-/status1xx.html">1<I>xx</I></A>,&nbsp;
+<A HREF="/httpd/-/status2xx.html">2<I>xx</I></A>,&nbsp;
+<A HREF="/httpd/-/status3xx.html">3<I>xx</I></A>,&nbsp;
+<A HREF="/httpd/-/status4xx.html">4<I>xx</I></A>,&nbsp;
+<A HREF="/httpd/-/status5xx.html">5<I>xx</I></A>,&nbsp;
+<A HREF="/httpd/-/statushelp.html">Help</A>
+<P><HR WIDTH=85% ALIGN=left SIZE=2 NOSHADE>
+<ADDRESS>WASD/10.4.1 Server at www.uma.es Port 80</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,16 @@
+<HTML><HEAD><TITLE>Error</TITLE></HEAD>
+<BODY>
+<H1>Error - Not Found </H1>
+<hr>
+<h4>The URL you requested (<em>http://pages.prodigy.com/Strawn/rainbow.mid</em>)
+does not exist on the PRODIGY Personal Web Pages Server. The problem may be 
+due to one of the following:</h4><br>
+<em>
+<img src="/images/ball_pur.gif">You typed the URL incorrectly,<br><br>
+<img src="/images/ball_pur.gif">The PRODIGY member is no longer publishing the page,<br><br>
+<img src="/images/ball_pur.gif">The PRODIGY member has changed the URL,<br><br>
+<img src="/images/ball_pur.gif">You followed an invalid link or someone gave you an incorrect URL.<br><br>
+</em>
+
+<hr>
+</BODY></HTML>

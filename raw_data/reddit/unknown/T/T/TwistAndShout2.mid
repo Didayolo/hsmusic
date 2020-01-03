@@ -1,0 +1,51 @@
+
+<HTML>
+<HEAD><TITLE>Please Please Me</TITLE>
+  <script language="JavaScript">
+function MM_displayStatusMsg(msgStr) { //v1.0
+  status=msgStr;
+  document.MM_returnValue = true;
+}
+</script>
+  <script language="JavaScript">
+function MM_goToURL() { //v1.0
+  for (var i=0; i< (MM_goToURL.arguments.length - 1); i+=2) //with arg pairs
+    eval(MM_goToURL.arguments[i]+".location='"+MM_goToURL.arguments[i+1]+"'");
+  document.MM_returnValue = false;
+}
+</script>
+</HEAD>
+
+<BODY BACKGROUND="../ground.gif" BGCOLOR=#FFFF00 TEXT=#00000 LINK=#FF0000 VLINK=#0000FF ALINK=#FF0080>
+
+<H2><IMG SRC="pleasepleaseme.jpg" WIDTH=114 HEIGHT=114><I> Please Please Me</I> - 1963</H2>
+<DL>
+  
+  <DT><IMG SRC="../midi.gif"> <A href="#" onmouseover="MM_displayStatusMsg('I Saw Her Standing There');return document.MM_returnValue" onclick="MM_goToURL('parent','midi/Isawher.mid');return document.MM_returnValue" target="">I 
+    Saw Her Standing There</a> 
+  <DT><IMG SRC="../midi.gif"> <A HREF="#" onmouseover="MM_displayStatusMsg('Misery');return document.MM_returnValue" onclick="MM_goToURL('parent','midi/Misery.mid');return document.MM_returnValue" target="">Misery</A> 
+  <DT><IMG SRC="../midi.gif"> <A HREF="#" onmouseover="MM_displayStatusMsg('Anna (Go To Him)');return document.MM_returnValue" onclick="MM_goToURL('parent','midi/Anna.mid');return document.MM_returnValue" target="">Anna 
+    (Go To Him)</A> 
+  <DT><IMG SRC="../midi.gif"> <A HREF="#" onmouseover="MM_displayStatusMsg('Chains');return document.MM_returnValue" onclick="MM_goToURL('parent','midi/Chains.mid');return document.MM_returnValue" target="">Chains</A> 
+  <DT><IMG SRC="../midi.gif"> <A HREF="#" onmouseover="MM_displayStatusMsg('Boys');return document.MM_returnValue" onclick="MM_goToURL('parent','midi/Boys.mid');return document.MM_returnValue" target="">Boys</A> 
+  <DT><IMG SRC="../midi.gif"> <A href="#" onmouseover="MM_displayStatusMsg('Ask Me Why');return document.MM_returnValue" onclick="MM_goToURL('parent','midi/Askme.mid');return document.MM_returnValue" target="">Ask 
+    Me Why</a> 
+  <DT><IMG SRC="../midi.gif"> <A href="#" onmouseover="MM_displayStatusMsg('Please Please Me');return document.MM_returnValue" onclick="MM_goToURL('parent','midi/Please.mid');return document.MM_returnValue" target="">Please 
+    Please Me</a> 
+  <DT><IMG SRC="../midi.gif"> <A href="#" onmouseover="MM_displayStatusMsg('Love Me Do');return document.MM_returnValue" onclick="MM_goToURL('parent','midi/Loveme.mid');return document.MM_returnValue" target="">Love 
+    Me Do</a> 
+  <DT><IMG SRC="../midi.gif"> <A href="#" onmouseover="MM_displayStatusMsg('P.S. I Love You');return document.MM_returnValue" onclick="MM_goToURL('parent','midi/Psilove.mid');return document.MM_returnValue" target="">P.S. 
+    I Love You</a> 
+  <DT><IMG SRC="../midi.gif"> <A href="#" onmouseover="MM_displayStatusMsg('Baby It\'s You');return document.MM_returnValue" onclick="MM_goToURL('parent','midi/Babyits.mid');return document.MM_returnValue" target="">Baby 
+    It's You</a> 
+  <DT><IMG SRC="../midi.gif"> <A HREF="#" onmouseover="MM_displayStatusMsg('Do You Want To Know A Secret');return document.MM_returnValue" onclick="MM_goToURL('parent','midi/secret.mid');return document.MM_returnValue" target="">Do 
+    You Want To Know A Secret</A> 
+  <DT><IMG SRC="../midi.gif"> <A HREF="#" onmouseover="MM_displayStatusMsg('A Taste Of Honey');return document.MM_returnValue" onclick="MM_goToURL('parent','midi/Ataste.mid');return document.MM_returnValue" target="">A 
+    Taste Of Honey</A> 
+  <DT><IMG SRC="../midi.gif"> <A href="#" onmouseover="MM_displayStatusMsg('There\'s A Place');return document.MM_returnValue" onclick="MM_goToURL('parent','midi/There.mid');return document.MM_returnValue" target="">There's 
+    A Place</a> 
+  <DT><IMG SRC="../midi.gif"> <A HREF="#" onmouseover="MM_displayStatusMsg('Twist And Shout');return document.MM_returnValue" onclick="MM_goToURL('parent','midi/Twist&sh.mid');return document.MM_returnValue" target="">Twist 
+    And Shout</A>     
+</DL>
+</body>
+</HTML>

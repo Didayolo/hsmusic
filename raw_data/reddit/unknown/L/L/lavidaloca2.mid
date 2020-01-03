@@ -1,0 +1,64 @@
+<HTML>
+<HEAD>
+<TITLE>Now Playing MIDI -- Living la Vida Loca</TITLE>
+</HEAD>
+<BODY BGCOLOR="#000000" BACKGROUND="back4.gif" TEXT="#00FFFF" LINK="#BDBDFF" VLINK="#7B7BFF" ALINK="#05D00">
+
+<table align=left><tr><td>
+<a href="http://wilstar.com/xmas/bc-xmas.htm" target="_new"><img src="http://wilstar.com/xmas/bc-xmas-smallbanner.gif" alt="Buy this Christmas CD Online!" border=0 height=54 width=110></a>
+</td></tr></table>
+
+
+
+
+
+
+
+<table align=right><td width=150 align=center><font face=arial size=-1>If you can't hear the music playing, <A HREF="http://wilstar.net/midi/livinglavidaloca.mid ">click here.</A></font></td></table>
+<CENTER>
+<applet code="Banners.class"  width="320" height="25" alignment="Middle" codebase="/Java/">
+<param name="textColor"     value="Yellow">
+<param name="pause"         value="1">
+<param name="exit"          value="scrollLeft">
+<param name="bgColor"       value="Black">
+<param name="align"         value="Center">
+<param name="fps"           value="20">
+<param name="repeat"        value="1">
+<param name="borderWidth"   value="1">
+<param name="bgExit"        value="None">
+<param name="messages"      value="Now Playing:  Living la Vida Loca |Vote for Your Favorite Tune...Click Here! {url=http://wilstar.net/vote1.htm}{pause=2}{enter=scrollDown}{exit=scrollUp} |Click Here to Sign My Guestbook.  Thank You! {pause=0}{textColor=cyan}{url=http://wilstar.net/guestbook.html}">
+<param name="font"          value="Helvetica">
+<param name="cpf"           value="2">
+<param name="enter"         value="scrollLeft">
+<param name="bgEnter"       value="None">
+<param name="style"         value="Bold">
+<param name="size"          value="12">
+</applet>
+<BR>
+<embed src="http://wilstar.net/midi/livinglavidaloca.mid" align="center"
+border="0" width="51" height="15" autostart="true" loop="false"
+volume="90" controls="smallconsole">
+</CENTER>
+<BR>
+</BODY> 
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

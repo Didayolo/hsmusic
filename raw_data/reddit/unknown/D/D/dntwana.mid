@@ -1,0 +1,12 @@
+<HTML>
+<TITLE>Unauthorized</TITLE>
+<BODY>
+<H1>401 Unauthorized</H1><P>
+ユーザ名またはパスワードがまちがっています。<P>
+前のページに戻り、正しく入力し直してください。<P>
+(errorcode=401)<P>
+<HR ALIGN=CENTER>
+All right reserved by NEC Corporation.<P>
+Copyright (C) NEC Corporation 1996 -<P>
+</BODY>
+</HTML>

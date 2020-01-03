@@ -192,7 +192,8 @@ if __name__ == "__main__":
     print(message)
 
     # create dataset
-    # add_data('raw_data')
+    # add_data('raw_data') 
+    # format('raw_data) ?
 
     labels = get_labels()
     print(get_labels_distribution(labels))
