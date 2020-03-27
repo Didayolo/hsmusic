@@ -73,18 +73,17 @@ def get_add_labels():
 def create_dataset(input_dir, sublabels=None):
     """ Scan input_dir folder and execute create_dataset recursively.
         Read labels from directory names, filenames and MIDI files.
-        Copy data to DATA_DIR.
         Write labels in labels file.
     """
-    print('initializing dataset...')
+    print('Initializing dataset...')
     # create labels file
     if not os.path.isfile(LABELS_FILENAME):
         labels_file = open(os.path.join(LABELS_FILENAME), 'w') # in root dir
         labels_file.write('FileName,Labels\n')
         labels_file.close()
     labels_file = open(os.path.join(LABELS_FILENAME), 'a')
-    if not os.path.exists(DATA_DIR):
-        os.makedirs(DATA_DIR) # create data dir
+    #if not os.path.exists(DATA_DIR):
+    #    os.makedirs(DATA_DIR) # create data dir
     dirname = os.path.basename(input_dir)
     print(dirname)
     files = os.listdir(input_dir)
@@ -97,12 +96,12 @@ def create_dataset(input_dir, sublabels=None):
     for folder in folders:
         create_dataset(os.path.join(input_dir, folder), sublabels=labels) # recursive call
     for midifile in midifiles:
-        filename = standardize(os.path.basename(midifile))[:-3] + '.mid'
-        print(filename)
-        f_labels = labels + to_labels(filename) # add labels contained in filename
+        filename_labels = standardize(os.path.basename(midifile))[:-3] + '.mid'
+        print(midifile)
+        f_labels = labels + to_labels(filename_labels) # add labels contained in filename
         f_labels = set(f_labels) # unique labels
-        labels_file.write('{},{}\n'.format(filename, ';'.join(f_labels)))
-        copyfile(os.path.join(input_dir, midifile), os.path.join(DATA_DIR, filename)) # copy midifile
+        labels_file.write('{},{}\n'.format(midifile, ';'.join(f_labels)))
+        #copyfile(os.path.join(input_dir, midifile), os.path.join(DATA_DIR, filename)) # copy midifile
     labels_file.close()
 
 def clean_labels(labels):
