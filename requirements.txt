@@ -1,1 +1,2 @@
 numpy
+#python3-midi: https://github.com/louisabraham/python3-midi

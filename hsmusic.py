@@ -106,21 +106,6 @@ def to_midi(statematrix, name="output.mid"):
     track.append(eot)
     midi.write_midifile(name, pattern)
 
-def get_labels_distribution(labels):
-    """ Read labels file and return the labels distribution.
-        :return: Number of occurences for each label.
-        :rtype: dict
-    """
-    labels = labels['Labels']
-    dist = dict()
-    for line in labels:
-        for label in line.split(';'):
-            if label in dist:
-                dist[label] += 1
-            else:
-                dist[label] = 1
-    return dist
-
 def contains_tag(tags_list, tag):
     """ Example: tags_list = 'bach;baroque;partita'
                  tag = 'bar'
@@ -166,11 +151,11 @@ def get_data(labels, tags=None, numbers=None, return_filenames=False):
     data = []
     files = sample(labels, tags=tags, numbers=numbers)['FileName']
     for f in files:
-        path = os.path.join(DATA_DIR, f)
         try:
-            data.append(to_matrix(path))
-        except:
+            data.append(to_matrix(f))
+        except Exception as e:
             print('Failed to read {}.'.format(f))
+            print(e)
     data = np.array(data)
     if return_filenames:
         return data, files
@@ -192,17 +177,20 @@ if __name__ == "__main__":
     print(message)
 
     # create dataset
-    format(DATA_DIR)
+    #format(DATA_DIR)
 
     labels = get_labels()
     print(get_labels_distribution(labels))
 
-    midi_file_example = os.path.join(DATA_DIR, labels['FileName'][0])
+    midi_file_example = labels['FileName'][0]
     output_file_example = os.path.join(OUTPUT_DIR, 'output.mid')
+    print('Reading {}'.format(midi_file_example))
     matrix = to_matrix(midi_file_example) # read file
+    print('Writing {}'.format(output_file_example))
     to_midi(matrix, output_file_example) # write file
 
     # select and read data
+    print('Loading some music...')
     data = get_data(labels, ['bach', 'mozart'], [10, 10])
     for e in data:
         print(e.shape)

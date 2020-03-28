@@ -6,7 +6,7 @@ import os
 import pandas as pd
 import unicodedata
 import re
-from shutil import copyfile
+from shutil import move
 
 DATA_DIR = 'data'
 OUTPUT_DIR = 'output'
@@ -76,6 +76,10 @@ def create_dataset(input_dir, sublabels=None):
         Write labels in labels file.
     """
     print('Initializing dataset...')
+    # standardize folder name
+    new_input_dir = os.path.join(os.path.dirname(input_dir), standardize(os.path.basename(input_dir)))
+    move(input_dir, new_input_dir) # rename
+    input_dir = new_input_dir
     # create labels file
     if not os.path.isfile(LABELS_FILENAME):
         labels_file = open(os.path.join(LABELS_FILENAME), 'w') # in root dir
@@ -96,13 +100,29 @@ def create_dataset(input_dir, sublabels=None):
     for folder in folders:
         create_dataset(os.path.join(input_dir, folder), sublabels=labels) # recursive call
     for midifile in midifiles:
-        filename_labels = standardize(os.path.basename(midifile))[:-3] + '.mid'
-        print(midifile)
-        f_labels = labels + to_labels(filename_labels) # add labels contained in filename
+        filename = standardize(os.path.basename(midifile))[:-3] + '.mid'
+        print(filename)
+        f_labels = labels + to_labels(filename) # add labels contained in filename
         f_labels = set(f_labels) # unique labels
-        labels_file.write('{},{}\n'.format(midifile, ';'.join(f_labels)))
-        #copyfile(os.path.join(input_dir, midifile), os.path.join(DATA_DIR, filename)) # copy midifile
+        filename_path = os.path.join(input_dir, filename)
+        labels_file.write('{},{}\n'.format(filename_path, ';'.join(f_labels)))
+        move(os.path.join(input_dir, midifile), filename_path) # rename midifile
     labels_file.close()
+
+def get_labels_distribution(labels):
+    """ Read labels file and return the labels distribution.
+        :return: Number of occurences for each label.
+        :rtype: dict
+    """
+    labels = labels['Labels']
+    dist = dict()
+    for line in labels:
+        for label in line.split(';'):
+            if label in dist:
+                dist[label] += 1
+            else:
+                dist[label] = 1
+    return dist
 
 def clean_labels(labels):
     """ 1. Not labels:     'midi' -> ''
@@ -110,7 +130,7 @@ def clean_labels(labels):
         3. Add labels:     'bach' -> 'bach,baroque'
         4. Delete unshared labels (only one occurence).
     """
-    print('cleaning labels...')
+    print('Cleaning labels...')
     # read labels file
     not_labels = get_not_labels()
     replace_labels = get_replace_labels()
