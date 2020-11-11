@@ -47,7 +47,9 @@ def get_labels():
         :return: DataFrame ['FileName', 'Labels']
         :rtype: pd.DataFrame
     """
-    return pd.read_csv(LABELS_FILENAME, header=0, index_col=None)
+    df = pd.read_csv(LABELS_FILENAME, header=0, index_col=None)
+    df['FileName'] = ABS_PATH + '/' + df['FileName']
+    return df
 
 def get_not_labels():
     """ Return a list of tags to not consider as labels.

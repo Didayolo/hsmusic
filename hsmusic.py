@@ -14,6 +14,7 @@ import midi
 import numpy as np
 import os
 from manage_dataset import *
+from tqdm import tqdm
 
 lower_bound = 24
 upper_bound = 102
@@ -134,7 +135,7 @@ def sample(labels, tags=None, numbers=None):
         result = pd.concat([result, selection]) # add to df
     return result
 
-def get_data(labels, tags=None, numbers=None, return_filenames=False):
+def get_data(tags=None, numbers=None, labels=None, return_filenames=False):
     """ Get data associated to specific labels.
         Default behaviour: get the whole dataset.
         Read midi files ...
@@ -150,9 +151,12 @@ def get_data(labels, tags=None, numbers=None, return_filenames=False):
         :return: Matrix of shape (n, ?, upper_bound - lower_bound, 2)
         :rtype: np.ndarray
     """
+    print('Reading midi files...')
+    if labels is None:
+        labels = get_labels()
     data = []
     files = sample(labels, tags=tags, numbers=numbers)['FileName']
-    for f in files:
+    for f in tqdm(files):
         try:
             data.append(to_matrix(f))
         except Exception as e:
@@ -163,13 +167,11 @@ def get_data(labels, tags=None, numbers=None, return_filenames=False):
         return data, files
     return data
 
-def get_filenames(tags=None, numbers=None, absolute_path=True):
+def get_filenames(tags=None, numbers=None):
     """ Return a pd.Series of all filenames/path given a list of tags.
     """
     labels = get_labels()
     filenames = sample(labels, tags=tags, numbers=numbers)['FileName']
-    if absolute_path:
-        filenames = ABS_PATH + '/' + filenames
     return filenames
 
 def download():
