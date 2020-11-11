@@ -8,9 +8,10 @@ import unicodedata
 import re
 from shutil import move
 
-DATA_DIR = 'data'
-OUTPUT_DIR = 'output'
-LABELS_DIR = 'labels'
+ABS_PATH = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(ABS_PATH, 'data')
+OUTPUT_DIR = os.path.join(ABS_PATH, 'output')
+LABELS_DIR = os.path.join(ABS_PATH, 'labels')
 LABELS_FILENAME = os.path.join(LABELS_DIR, 'labels.csv')
 NOT_LABELS_FILENAME = os.path.join(LABELS_DIR, 'not_labels.csv')
 REPLACE_LABELS_FILENAME = os.path.join(LABELS_DIR, 'replace_labels.csv')

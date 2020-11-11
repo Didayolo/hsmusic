@@ -116,6 +116,8 @@ def contains_tag(tags_list, tag):
 def sample(labels, tags=None, numbers=None):
     """ ...
     """
+    if tags is None:
+        tags = ['']
     if isinstance(tags, str): # only one string instead of a list
         tags = [tags]
     if isinstance(numbers, int): # only one int instead of a list
@@ -161,6 +163,15 @@ def get_data(labels, tags=None, numbers=None, return_filenames=False):
         return data, files
     return data
 
+def get_filenames(tags=None, numbers=None, absolute_path=True):
+    """ Return a pd.Series of all filenames/path given a list of tags.
+    """
+    labels = get_labels()
+    filenames = sample(labels, tags=tags, numbers=numbers)['FileName']
+    if absolute_path:
+        filenames = ABS_PATH + '/' + filenames
+    return filenames
+
 def download():
     pass
 
@@ -176,21 +187,25 @@ if __name__ == "__main__":
     print(art)
     print(message)
 
+    print("Hint:")
+    print("hsmusic.get_filnames('mozart')")
+    print("hsmusic.get_filnames(['mozart', 'bach'])")
+
     # create dataset
     #format(DATA_DIR)
 
-    labels = get_labels()
-    print(get_labels_distribution(labels))
+    #labels = get_labels()
+    #print(get_labels_distribution(labels))
 
-    midi_file_example = labels['FileName'][0]
-    output_file_example = os.path.join(OUTPUT_DIR, 'output.mid')
-    print('Reading {}'.format(midi_file_example))
-    matrix = to_matrix(midi_file_example) # read file
-    print('Writing {}'.format(output_file_example))
-    to_midi(matrix, output_file_example) # write file
+    #midi_file_example = labels['FileName'][0]
+    #output_file_example = os.path.join(OUTPUT_DIR, 'output.mid')
+    #print('Reading {}'.format(midi_file_example))
+    #matrix = to_matrix(midi_file_example) # read file
+    #print('Writing {}'.format(output_file_example))
+    #to_midi(matrix, output_file_example) # write file
 
     # select and read data
-    print('Loading some music...')
-    data = get_data(labels, ['bach', 'mozart'], [10, 10])
-    for e in data:
-        print(e.shape)
+    #print('Loading some music...')
+    #data = get_data(labels, ['bach', 'mozart'], [10, 10])
+    #for e in data:
+    #    print(e.shape)
