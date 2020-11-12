@@ -29,7 +29,7 @@ def crop_data_bis(data, sequence_length=100):
 def simplify_data(data):
     return data[:,:,:,0]
 
-def binarize(a):
+def binarize(a, threshold=0.5):
     """ Binarize np.array
     """
-    return np.where(a > 0.5, 1, 0)
+    return np.where(a > threshold, 1, 0)
